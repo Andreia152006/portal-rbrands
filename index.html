@@ -113,9 +113,35 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:3px}
 @media(max-width:600px){.hero,.controls,.divider,.links,.grid,.banner{padding-left:1rem;padding-right:1rem}.grid{grid-template-columns:1fr}header{padding:0 1rem}}
+
+#login-screen{position:fixed;inset:0;background:var(--bg);z-index:999;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.login-box{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:2.5rem 2rem;max-width:360px;width:100%;text-align:center;box-shadow:0 8px 32px rgba(70,105,175,0.12)}
+.login-logo{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
+.login-logo svg{width:20px;height:20px}
+.login-box h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.4rem}
+.login-box p{font-size:0.78rem;color:var(--muted);margin-bottom:1.6rem}
+.login-input{width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;text-align:center;letter-spacing:0.05em;margin-bottom:0.8rem;transition:border-color .2s}
+.login-input:focus{border-color:var(--accent)}
+.login-btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:8px;padding:0.75rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:background .2s}
+.login-btn:hover{background:var(--accent2)}
+.login-error{font-size:0.75rem;color:#c82a2a;margin-top:0.5rem;min-height:1.1rem}
 </style>
 </head>
 <body>
+
+
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h2>Portal Rbrands</h2>
+    <p>Pós-Venda · Invictus & Galápagos</p>
+    <input class="login-input" id="senha-input" type="password" placeholder="Digite a senha" onkeydown="if(event.key==='Enter')verificarSenha()">
+    <button class="login-btn" onclick="verificarSenha()">Entrar</button>
+    <p class="login-error" id="login-erro"></p>
+  </div>
+</div>
 
 <header>
   <div class="logo">
@@ -258,6 +284,23 @@ const hoje=new Date();
 document.getElementById('hoje').textContent=`${DIAS[hoje.getDay()]}, ${hoje.getDate()} de ${MESES[hoje.getMonth()]} de ${hoje.getFullYear()}`;
 
 let posts=[], catAtiva='todos';
+
+
+const SENHA = 'SAC@rbr@nds2026';
+function verificarSenha(){
+  const val = document.getElementById('senha-input').value;
+  if(val === SENHA){
+    document.getElementById('login-screen').style.display='none';
+    sessionStorage.setItem('auth','ok');
+  } else {
+    document.getElementById('login-erro').textContent='Senha incorreta. Tente novamente.';
+    document.getElementById('senha-input').value='';
+    document.getElementById('senha-input').focus();
+  }
+}
+if(sessionStorage.getItem('auth')==='ok'){
+  document.getElementById('login-screen').style.display='none';
+}
 
 // CARREGAR PLANILHA
 const API_URL = 'https://script.google.com/macros/s/AKfycbzfT0TdyxG3RBOeANAxOTtsbTljB9M8jGuTpVDNaKlbZFn9JlzJJjr21FmFQuq4FRhxlA/exec';
