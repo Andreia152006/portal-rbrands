@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_9.html -->
-<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rbrands · Comunicação D2C</title>
-<link href="./Rbrands · Comunicação D2C_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f0f4fa;
@@ -198,7 +198,7 @@
     .logo-sub{display:none}
   }
 </style>
-<script src="./Rbrands · Comunicação D2C_files/json.txt"></script></head>
+</head>
 <body>
 
 <script>
@@ -216,8 +216,8 @@
   </div>
   <div class="header-right">
     <div class="header-badge">Comunicação D2C</div>
-    <a id="btn-form" class="btn-primary" href="file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_9.html#" target="_blank" style="display:none">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    <a id="btn-form" class="btn-primary" href="#" target="_blank" style="display:none">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       Nova Publicação
     </a>
   </div>
@@ -225,9 +225,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-label">✦ Pós-Venda · Invictus &amp; Galápagos</p>
+  <p class="hero-label">✦ Pós-Venda · Invictus & Galápagos</p>
   <h1 class="hero-title">Tudo num só lugar.<br><em>Comunicação simplificada.</em></h1>
-  <p class="hero-date" id="today-date">Quinta-feira, 12 de Março de 2026</p>
+  <p class="hero-date" id="today-date"></p>
 </section>
 
 <!-- QUICK LINKS -->
@@ -239,9 +239,9 @@
 <!-- BANNER -->
 <div class="config-banner">
   <div class="banner" id="config-banner">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-    <div class="banner-text">Não foi possível conectar à planilha. Verifique se ela está publicada e compartilhada publicamente.</div>
-    <button class="banner-close" onclick="document.getElementById(&#39;config-banner&#39;).style.display=&#39;none&#39;">✕</button>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <div class="banner-text">Conectando à planilha...</div>
+    <button class="banner-close" onclick="document.getElementById('config-banner').style.display='none'">✕</button>
   </div>
 </div>
 
@@ -249,116 +249,41 @@
 <div class="controls">
   <div class="search-row">
     <div class="search-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       <input class="search-input" id="search-input" type="text" placeholder="🔍  Buscar por palavra-chave, autor..." oninput="render()">
     </div>
     <input class="date-input" id="date-input" type="date" onchange="render()">
     <button class="btn-ghost" onclick="clearFilters()">Limpar</button>
   </div>
   <div class="filter-tags">
-    <button class="tag active" data-cat="todos" onclick="setCategory(&#39;todos&#39;,this)">🗂️ Todos</button>
-    <button class="tag" data-cat="orientacoes" onclick="setCategory(&#39;orientacoes&#39;,this)">📋 Orientações e Procedimentos</button>
-    <button class="tag" data-cat="resultados" onclick="setCategory(&#39;resultados&#39;,this)">🏆 Nossos Resultados</button>
-    <button class="tag" data-cat="alinhamentos" onclick="setCategory(&#39;alinhamentos&#39;,this)">🤝 Alinhamentos</button>
-    <button class="tag" data-cat="produto" onclick="setCategory(&#39;produto&#39;,this)">🛍️ Produto</button>
-    <button class="tag" data-cat="transportes" onclick="setCategory(&#39;transportes&#39;,this)">🚚 Transportes</button>
-    <button class="tag" data-cat="campanhas" onclick="setCategory(&#39;campanhas&#39;,this)">📣 Campanhas</button>
-    <button class="tag" data-cat="cupons" onclick="setCategory(&#39;cupons&#39;,this)">🎟️ Cupons</button>
-    <button class="tag" data-cat="grupos" onclick="setCategory(&#39;grupos&#39;,this)">👥 Grupos Especiais</button>
-    <button class="tag" data-cat="dicas" onclick="setCategory(&#39;dicas&#39;,this)">💡 Dicas de Atendimento</button>
-    <button class="tag" data-cat="melhorias" onclick="setCategory(&#39;melhorias&#39;,this)">⚙️ Melhorias</button>
-    <button class="tag" data-cat="elogios" onclick="setCategory(&#39;elogios&#39;,this)">⭐ Elogios</button>
-    <button class="tag" data-cat="agendas" onclick="setCategory(&#39;agendas&#39;,this)">📅 Nossas Agendas</button>
-    <button class="tag" data-cat="outros" onclick="setCategory(&#39;outros&#39;,this)">📌 Outros</button>
+    <button class="tag active" data-cat="todos" onclick="setCategory('todos',this)">🗂️ Todos</button>
+    <button class="tag" data-cat="orientacoes" onclick="setCategory('orientacoes',this)">📋 Orientações e Procedimentos</button>
+    <button class="tag" data-cat="resultados" onclick="setCategory('resultados',this)">🏆 Nossos Resultados</button>
+    <button class="tag" data-cat="alinhamentos" onclick="setCategory('alinhamentos',this)">🤝 Alinhamentos</button>
+    <button class="tag" data-cat="produto" onclick="setCategory('produto',this)">🛍️ Produto</button>
+    <button class="tag" data-cat="transportes" onclick="setCategory('transportes',this)">🚚 Transportes</button>
+    <button class="tag" data-cat="campanhas" onclick="setCategory('campanhas',this)">📣 Campanhas</button>
+    <button class="tag" data-cat="cupons" onclick="setCategory('cupons',this)">🎟️ Cupons</button>
+    <button class="tag" data-cat="grupos" onclick="setCategory('grupos',this)">👥 Grupos Especiais</button>
+    <button class="tag" data-cat="dicas" onclick="setCategory('dicas',this)">💡 Dicas de Atendimento</button>
+    <button class="tag" data-cat="melhorias" onclick="setCategory('melhorias',this)">⚙️ Melhorias</button>
+    <button class="tag" data-cat="elogios" onclick="setCategory('elogios',this)">⭐ Elogios</button>
+    <button class="tag" data-cat="agendas" onclick="setCategory('agendas',this)">📅 Nossas Agendas</button>
+    <button class="tag" data-cat="outros" onclick="setCategory('outros',this)">📌 Outros</button>
   </div>
 </div>
 
 <!-- DIVIDER -->
 <div class="section-divider">
-  <p class="results-info">Exibindo <span id="count">5</span> publicações</p>
+  <p class="results-info">Exibindo <span id="count">0</span> publicações</p>
   <button class="sync-btn" onclick="loadPosts()">
-    <svg id="sync-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class=""><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+    <svg id="sync-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
     Atualizar
   </button>
 </div>
 
 <!-- GRID -->
-<div class="grid" id="card-grid"><div class="card pinned" style="animation-delay: 0s;">
-      <div class="card-header">
-        <span class="cat-pill pill-resultados">🏆 Resultados</span>
-        <span style="color:var(--accent);font-size:.85rem">📌</span>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">CSAT semanal: 94% de satisfação!</h3>
-        <p class="card-excerpt">O time de pós-venda atingiu 94% de CSAT esta semana — melhor marca do trimestre!</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-meta">
-          <div class="avatar" style="background:#4669AF">D</div>
-          <span class="card-author">Deia</span>
-        </div>
-        <span class="card-date">10 mar 2025</span>
-      </div></div><div class="card elogio" style="animation-delay: 0.05s;">
-      <div class="card-header">
-        <span class="cat-pill pill-elogios">⭐ Elogios</span>
-        
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Cliente elogiou atendimento da Ana!</h3>
-        <p class="card-excerpt">Cliente enviou mensagem elogiando a rapidez e empatia no atendimento. Orgulho do time!</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-meta">
-          <div class="avatar" style="background:#2a8a5a">D</div>
-          <span class="card-author">Deia</span>
-        </div>
-        <span class="card-date">10 mar 2025</span>
-      </div></div><div class="card" style="animation-delay: 0.1s;">
-      <div class="card-header">
-        <span class="cat-pill pill-transportes">🚚 Transportes</span>
-        
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Correios: atraso na região Sul até 14/03</h3>
-        <p class="card-excerpt">Pedidos despachados entre 5 e 9 de março podem atrasar até 3 dias úteis no RS e SC.</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-meta">
-          <div class="avatar" style="background:#7a5aaf">AB</div>
-          <span class="card-author">Ana Beatriz</span>
-        </div>
-        <span class="card-date">9 mar 2025</span>
-      </div></div><div class="card" style="animation-delay: 0.15s;">
-      <div class="card-header">
-        <span class="cat-pill pill-campanhas">📣 Campanhas</span>
-        
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Campanha Invictus Março: desconto progressivo ativo</h3>
-        <p class="card-excerpt">10% a 25% de desconto para compras acima de R$150. Cupons individuais não acumulam.</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-meta">
-          <div class="avatar" style="background:#c87a2a">M</div>
-          <span class="card-author">Marcos</span>
-        </div>
-        <span class="card-date">8 mar 2025</span>
-      </div></div><div class="card" style="animation-delay: 0.2s;">
-      <div class="card-header">
-        <span class="cat-pill pill-orientacoes">📋 Orientações</span>
-        
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Script atualizado: reclamações no WhatsApp v2.1</h3>
-        <p class="card-excerpt">Nova versão do script com abertura mais empática e fluxo específico por tipo de reclamação.</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-meta">
-          <div class="avatar" style="background:#2a8aaf">J</div>
-          <span class="card-author">Juliana</span>
-        </div>
-        <span class="card-date">6 mar 2025</span>
-      </div></div></div>
+<div class="grid" id="card-grid"></div>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="read-overlay" onclick="closeRead(event)">
@@ -502,90 +427,39 @@ function parseCSV(text) {
 
 // ── LOAD ──────────────────────────────────────────────────
 function loadPosts() {
-  const icon=document.getElementById('sync-icon');
+  const icon = document.getElementById('sync-icon');
   icon.classList.add('spin');
-  const banner=document.getElementById('config-banner');
 
-  // Mostra demo imediatamente enquanto tenta carregar a planilha
-  posts = DEMO_POSTS.map((p,i)=>({...p,_color:AVATAR_COLORS[i%AVATAR_COLORS.length]}));
-  render();
+  // Mostra demo imediatamente
+  if (posts.length === 0) {
+    posts = DEMO_POSTS.map((p,i) => ({...p, _color: AVATAR_COLORS[i % AVATAR_COLORS.length]}));
+    render();
+  }
 
-  // Use JSONP via gviz — works cross-origin sem CORS
-  const cbName = 'sheetCB_' + Date.now();
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&callback=${cbName}`;
-
-  const timeout = setTimeout(()=>{
-    icon.classList.remove('spin');
-    if(banner) banner.querySelector('.banner-text').textContent='Não foi possível conectar à planilha. Verifique se ela está publicada e compartilhada publicamente.';
-  }, 6000);
-
-  window[cbName] = function(data) {
-    clearTimeout(timeout);
-    icon.classList.remove('spin');
-    try {
-      const rows = data.table?.rows || [];
-      const cols = data.table?.cols || [];
-      const idx = {};
-      cols.forEach((c,i)=>{ idx[c.label?.toLowerCase().trim()] = i; });
-
-      const norm = s=>(s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-      const getCol = (...labels) => {
-        for (const l of labels) {
-          const key = Object.keys(idx).find(k => norm(k) === norm(l));
-          if (key !== undefined && idx[key] !== undefined) return idx[key];
-        }
-        return -1;
-      };
-
-      const iData = getCol('data');
-      const iCat  = getCol('categoria');
-      const iTit  = getCol('titulo','título','title');
-      const iNot  = getCol('noticia','notícia','conteudo','conteúdo','texto','mensagem');
-      const iRes  = getCol('resumo');
-      const iAut  = getCol('autor','author');
-      const iFix  = getCol('fixado','pin');
-
-      const get = (row, i) => i >= 0 && row.c[i]?.v != null ? String(row.c[i].v) : '';
-
-      posts = rows.map((row, i) => {
-        const noticia = get(row, iNot);
-        return {
-          id: i,
-          data: formatISODate(get(row, iData)),
-          cat: normalizeCat(get(row, iCat)),
-          titulo: get(row, iTit),
-          resumo: get(row, iRes) || noticia.substring(0,160)+(noticia.length>160?'...':''),
-          conteudo: noticia.replace(/\n/g,'<br>'),
-          autor: get(row, iAut) || 'Time',
-          pinned: get(row, iFix).toLowerCase().trim() === 'sim',
-          _color: AVATAR_COLORS[i % AVATAR_COLORS.length],
-        };
-      }).filter(p => p.titulo);
-
-      if (posts.length > 0) {
-        banner.style.display = 'none';
+  // Usa proxy para evitar bloqueio CORS do GitHub Pages
+  const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(CSV_URL);
+  fetch(proxyUrl)
+    .then(r => r.json())
+    .then(data => {
+      const parsed = parseCSV(data.contents);
+      icon.classList.remove('spin');
+      const banner = document.getElementById('config-banner');
+      if (parsed.length > 0) {
+        posts = parsed;
+        if (banner) banner.style.display = 'none';
       } else {
-        banner.querySelector('.banner-text').textContent = 'Planilha conectada, mas sem publicações ainda. Adicione linhas na planilha!';
+        if (banner) {
+          const bt = banner.querySelector('.banner-text');
+          if (bt) bt.textContent = 'Planilha conectada, mas sem publicações ainda. Adicione linhas na planilha!';
+        }
       }
-    } catch(e) {
-      console.warn('Erro ao processar planilha:', e);
-      posts = DEMO_POSTS.map((p,i)=>({...p,_color:AVATAR_COLORS[i%AVATAR_COLORS.length]}));
-    }
-    render();
-    delete window[cbName];
-  };
-
-  const script = document.createElement('script');
-  script.src = url;
-  script.onerror = () => {
-    clearTimeout(timeout);
-    icon.classList.remove('spin');
-    posts = DEMO_POSTS.map((p,i)=>({...p,_color:AVATAR_COLORS[i%AVATAR_COLORS.length]}));
-    if(banner) { const bt=banner.querySelector('.banner-text'); if(bt) bt.textContent='Erro ao conectar.'; }
-    render();
-    delete window[cbName];
-  };
-  document.head.appendChild(script);
+      render();
+    })
+    .catch(e => {
+      console.warn('Erro ao buscar planilha:', e);
+      icon.classList.remove('spin');
+      render();
+    });
 }
 
 // ── FILTERS ───────────────────────────────────────────────
@@ -653,5 +527,5 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeReadDirect()});
 
 loadPosts();
 </script>
-
-</body></html>
+</body>
+</html>
