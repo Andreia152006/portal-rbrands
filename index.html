@@ -414,7 +414,7 @@ function parseCSV(text) {
   const iRes=gi('resumo');const iAut=gi('autor','author');const iFix=gi('fixado','pin');
   return lines.slice(1).map((line,i)=>{
     const cols=splitLine(line).map(c=>c.replace(/^"|"$/g,'').trim());
-    const get=idx=>idx>=0?(cols[idx]||')':'';
+    const get=idx=>idx>=0?(cols[idx]||''):'';
     const noticia=get(iNot);
     return{id:i,data:formatISODate(get(iData)),cat:normalizeCat(get(iCat)),titulo:get(iTit),
       resumo:get(iRes)||noticia.substring(0,160)+(noticia.length>160?'...':''),
@@ -424,22 +424,89 @@ function parseCSV(text) {
 }
 
 // ── LOAD ──────────────────────────────────────────────────
-async function loadPosts() {
+function loadPosts() {
   const icon=document.getElementById('sync-icon');
   icon.classList.add('spin');
   const banner=document.getElementById('config-banner');
-  try {
-    const res  = await fetch(CSV_URL);
-    const text = await res.text();
-    posts = parseCSV(text);
-    banner.style.display='none';
-  } catch(e) {
-    console.warn('CSV error, using demo:', e);
+
+  // Use JSONP via gviz — works cross-origin sem CORS
+  const cbName = 'sheetCB_' + Date.now();
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&callback=${cbName}`;
+
+  const timeout = setTimeout(()=>{
+    icon.classList.remove('spin');
     posts = DEMO_POSTS.map((p,i)=>({...p,_color:AVATAR_COLORS[i%AVATAR_COLORS.length]}));
-    banner.querySelector('.banner-text').textContent='Usando dados de exemplo. Verifique a planilha.';
-  }
-  icon.classList.remove('spin');
-  render();
+    banner.querySelector('.banner-text').textContent='Não foi possível conectar à planilha. Verifique se ela está publicada.';
+    render();
+  }, 8000);
+
+  window[cbName] = function(data) {
+    clearTimeout(timeout);
+    icon.classList.remove('spin');
+    try {
+      const rows = data.table?.rows || [];
+      const cols = data.table?.cols || [];
+      const idx = {};
+      cols.forEach((c,i)=>{ idx[c.label?.toLowerCase().trim()] = i; });
+
+      const norm = s=>(s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      const getCol = (...labels) => {
+        for (const l of labels) {
+          const key = Object.keys(idx).find(k => norm(k) === norm(l));
+          if (key !== undefined && idx[key] !== undefined) return idx[key];
+        }
+        return -1;
+      };
+
+      const iData = getCol('data');
+      const iCat  = getCol('categoria');
+      const iTit  = getCol('titulo','título','title');
+      const iNot  = getCol('noticia','notícia','conteudo','conteúdo','texto','mensagem');
+      const iRes  = getCol('resumo');
+      const iAut  = getCol('autor','author');
+      const iFix  = getCol('fixado','pin');
+
+      const get = (row, i) => i >= 0 && row.c[i]?.v != null ? String(row.c[i].v) : '';
+
+      posts = rows.map((row, i) => {
+        const noticia = get(row, iNot);
+        return {
+          id: i,
+          data: formatISODate(get(row, iData)),
+          cat: normalizeCat(get(row, iCat)),
+          titulo: get(row, iTit),
+          resumo: get(row, iRes) || noticia.substring(0,160)+(noticia.length>160?'...':''),
+          conteudo: noticia.replace(/\n/g,'<br>'),
+          autor: get(row, iAut) || 'Time',
+          pinned: get(row, iFix).toLowerCase().trim() === 'sim',
+          _color: AVATAR_COLORS[i % AVATAR_COLORS.length],
+        };
+      }).filter(p => p.titulo);
+
+      if (posts.length > 0) {
+        banner.style.display = 'none';
+      } else {
+        banner.querySelector('.banner-text').textContent = 'Planilha conectada, mas sem publicações ainda. Adicione linhas na planilha!';
+      }
+    } catch(e) {
+      console.warn('Erro ao processar planilha:', e);
+      posts = DEMO_POSTS.map((p,i)=>({...p,_color:AVATAR_COLORS[i%AVATAR_COLORS.length]}));
+    }
+    render();
+    delete window[cbName];
+  };
+
+  const script = document.createElement('script');
+  script.src = url;
+  script.onerror = () => {
+    clearTimeout(timeout);
+    icon.classList.remove('spin');
+    posts = DEMO_POSTS.map((p,i)=>({...p,_color:AVATAR_COLORS[i%AVATAR_COLORS.length]}));
+    banner.querySelector('.banner-text').textContent='Erro ao conectar à planilha.';
+    render();
+    delete window[cbName];
+  };
+  document.head.appendChild(script);
 }
 
 // ── FILTERS ───────────────────────────────────────────────
@@ -450,62 +517,4 @@ function clearFilters(){activeCat='todos';document.getElementById('search-input'
 function render(){
   const grid=document.getElementById('card-grid');
   const q=document.getElementById('search-input').value.toLowerCase();
-  const dateVal=document.getElementById('date-input').value;
-  let f=posts.filter(p=>{
-    const mc=activeCat==='todos'||p.cat===activeCat;
-    const md=!dateVal||p.data===dateVal;
-    const ms=!q||[p.titulo,p.resumo,p.autor,p.conteudo].some(t=>String(t).toLowerCase().includes(q));
-    return mc&&md&&ms;
-  });
-  f.sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0)||(b.data||'').localeCompare(a.data||''));
-  document.getElementById('count').textContent=f.length;
-  grid.innerHTML='';
-  if(!f.length){grid.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p class="empty-text">Nenhuma publicação encontrada.</p></div>';return}
-  f.forEach((p,i)=>{
-    const cfg=getCatConfig(p.cat);
-    const col=p._color||AVATAR_COLORS[0];
-    const isElogio=p.cat==='elogios';
-    const card=document.createElement('div');
-    card.className='card'+(p.pinned?' pinned':'')+(isElogio?' elogio':'');
-    card.style.animationDelay=Math.min(i*.05,.4)+'s';
-    card.onclick=()=>openRead(p,col);
-    card.innerHTML=`
-      <div class="card-header">
-        <span class="cat-pill ${cfg.cls}">${cfg.label}</span>
-        ${p.pinned&&!isElogio?'<span style="color:var(--accent);font-size:.85rem">📌</span>':''}
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">${p.titulo}</h3>
-        <p class="card-excerpt">${p.resumo}</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-meta">
-          <div class="avatar" style="background:${col}">${ini(p.autor)}</div>
-          <span class="card-author">${p.autor}</span>
-        </div>
-        <span class="card-date">${fmt(p.data)}</span>
-      </div>`;
-    grid.appendChild(card);
-  });
-}
-
-// ── MODAL ─────────────────────────────────────────────────
-function openRead(p,col){
-  const cfg=getCatConfig(p.cat);
-  document.getElementById('modal-cat').innerHTML=`<span class="cat-pill ${cfg.cls}">${cfg.label}</span>`;
-  document.getElementById('modal-title').textContent=p.titulo;
-  document.getElementById('modal-avatar').style.background=col;
-  document.getElementById('modal-avatar').textContent=ini(p.autor);
-  document.getElementById('modal-author').textContent=p.autor;
-  document.getElementById('modal-date').textContent=fmtFull(p.data);
-  document.getElementById('modal-content').innerHTML=p.conteudo||'<p>Sem conteúdo.</p>';
-  document.getElementById('read-overlay').classList.add('open');
-}
-function closeRead(e){if(e.target.id==='read-overlay')closeReadDirect()}
-function closeReadDirect(){document.getElementById('read-overlay').classList.remove('open')}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeReadDirect()});
-
-loadPosts();
-</script>
-</body>
-</html>
+  const dateVal=document.getElementById('date-inpu
