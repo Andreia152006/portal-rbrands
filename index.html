@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_5.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rbrands · Comunicação D2C</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="./Rbrands · Comunicação D2C_files/css2" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -201,7 +201,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 </div>
 
 <div class="hero">
-  <p class="hero-label">✦ Pós-Venda · Invictus & Galápagos</p>
+  <p class="hero-label">✦ Pós-Venda · Invictus &amp; Galápagos</p>
   <h1>Tudo num só lugar.<br><em>Comunicação simplificada.</em></h1>
   <p class="hero-date" id="hoje"></p>
 </div>
@@ -214,40 +214,40 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 <div class="controls">
   <div class="search-row">
     <div class="search-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
       <input class="search-input" id="busca" type="text" placeholder="Buscar publicações..." oninput="render()">
     </div>
     <input class="date-input" id="data-filtro" type="date" onchange="render()">
     <button class="btn-ghost" onclick="limpar()">Limpar</button>
   </div>
   <div class="tags-row">
-    <button class="tag active" data-cat="todos" onclick="setcat('todos',this)">🗂️ Todos</button>
-    <button class="tag" data-cat="orientacoes" onclick="setcat('orientacoes',this)">📋 Orientações</button>
-    <button class="tag" data-cat="resultados" onclick="setcat('resultados',this)">🏆 Resultados</button>
-    <button class="tag" data-cat="alinhamentos" onclick="setcat('alinhamentos',this)">🤝 Alinhamentos</button>
-    <button class="tag" data-cat="produto" onclick="setcat('produto',this)">🛍️ Produto</button>
-    <button class="tag" data-cat="transportes" onclick="setcat('transportes',this)">🚚 Transportes</button>
-    <button class="tag" data-cat="campanhas" onclick="setcat('campanhas',this)">📣 Campanhas</button>
-    <button class="tag" data-cat="cupons" onclick="setcat('cupons',this)">🎟️ Cupons</button>
-    <button class="tag" data-cat="grupos" onclick="setcat('grupos',this)">👥 Grupos Especiais</button>
-    <button class="tag" data-cat="dicas" onclick="setcat('dicas',this)">💡 Dicas</button>
-    <button class="tag" data-cat="melhorias" onclick="setcat('melhorias',this)">⚙️ Melhorias</button>
-    <button class="tag" data-cat="elogios" onclick="setcat('elogios',this)">⭐ Elogios</button>
-    <button class="tag" data-cat="nossasagendas" onclick="setcat('nossasagendas',this)">📅 Nossas Agendas</button>
-    <button class="tag" data-cat="diariobordo" onclick="setcat('diariobordo',this)">📓 Diário de Bordo</button>
+    <button class="tag active" data-cat="todos" onclick="setcat(&#39;todos&#39;,this)">🗂️ Todos</button>
+    <button class="tag" data-cat="orientacoes" onclick="setcat(&#39;orientacoes&#39;,this)">📋 Orientações</button>
+    <button class="tag" data-cat="resultados" onclick="setcat(&#39;resultados&#39;,this)">🏆 Resultados</button>
+    <button class="tag" data-cat="alinhamentos" onclick="setcat(&#39;alinhamentos&#39;,this)">🤝 Alinhamentos</button>
+    <button class="tag" data-cat="produto" onclick="setcat(&#39;produto&#39;,this)">🛍️ Produto</button>
+    <button class="tag" data-cat="transportes" onclick="setcat(&#39;transportes&#39;,this)">🚚 Transportes</button>
+    <button class="tag" data-cat="campanhas" onclick="setcat(&#39;campanhas&#39;,this)">📣 Campanhas</button>
+    <button class="tag" data-cat="cupons" onclick="setcat(&#39;cupons&#39;,this)">🎟️ Cupons</button>
+    <button class="tag" data-cat="grupos" onclick="setcat(&#39;grupos&#39;,this)">👥 Grupos Especiais</button>
+    <button class="tag" data-cat="dicas" onclick="setcat(&#39;dicas&#39;,this)">💡 Dicas</button>
+    <button class="tag" data-cat="melhorias" onclick="setcat(&#39;melhorias&#39;,this)">⚙️ Melhorias</button>
+    <button class="tag" data-cat="elogios" onclick="setcat(&#39;elogios&#39;,this)">⭐ Elogios</button>
+    <button class="tag" data-cat="nossasagendas" onclick="setcat(&#39;nossasagendas&#39;,this)">📅 Nossas Agendas</button>
+    <button class="tag" data-cat="diariobordo" onclick="setcat(&#39;diariobordo&#39;,this)">📓 Diário de Bordo</button>
   </div>
   <div class="tags-section">
     <span class="tags-label">Marca:</span>
-    <button class="tag-marca" data-marca="INV" onclick="togglemarca('INV',this)">INV</button>
-    <button class="tag-marca" data-marca="GLP" onclick="togglemarca('GLP',this)">GLP</button>
-    <button class="tag-marca" data-marca="GLP+INV" onclick="togglemarca('GLP+INV',this)">GLP+INV</button>
+    <button class="tag-marca" data-marca="INV" onclick="togglemarca(&#39;INV&#39;,this)">INV</button>
+    <button class="tag-marca" data-marca="GLP" onclick="togglemarca(&#39;GLP&#39;,this)">GLP</button>
+    <button class="tag-marca" data-marca="GLP+INV" onclick="togglemarca(&#39;GLP+INV&#39;,this)">GLP+INV</button>
   </div>
 </div>
 
 <div class="divider">
   <p class="count">Exibindo <span id="total">0</span> publicações · <span id="nao-lidas-count" style="color:#c82a2a">0 não lidas</span></p>
   <button class="sync-btn" onclick="carregar()">
-    <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+    <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
     Atualizar
   </button>
 </div>
@@ -256,7 +256,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 
 <div class="overlay" id="overlay" onclick="fechar(event)">
   <div class="modal">
-    <img class="modal-img" id="m-img" src="" alt="" style="display:none">
+    <img class="modal-img" id="m-img" src="file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_5.html" alt="" style="display:none">
     <div class="modal-head">
       <div><div id="m-pill"></div><h2 class="modal-title" id="m-titulo"></h2></div>
       <button class="modal-close" onclick="fecharDireto()">✕</button>
@@ -470,5 +470,5 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharDireto();});
 
 carregar();
 </script>
-</body>
-</html>
+
+</body></html>
