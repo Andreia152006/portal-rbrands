@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao.html -->
-<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rbrands · Comunicação D2C</title>
-<link href="./Rbrands · Comunicação D2C_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -190,7 +190,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 </div>
 
 <div class="hero">
-  <p class="hero-label">✦ Pós-Venda · Invictus &amp; Galápagos</p>
+  <p class="hero-label">✦ Pós-Venda · Invictus & Galápagos</p>
   <h1>Tudo num só lugar.<br><em>Comunicação simplificada.</em></h1>
   <p class="hero-date" id="hoje"></p>
 </div>
@@ -203,40 +203,40 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 <div class="controls">
   <div class="search-row">
     <div class="search-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       <input class="search-input" id="busca" type="text" placeholder="Buscar publicações..." oninput="render()">
     </div>
     <input class="date-input" id="data-filtro" type="date" onchange="render()">
     <button class="btn-ghost" onclick="limpar()">Limpar</button>
   </div>
   <div class="tags-row">
-    <button class="tag active" data-cat="todos" onclick="setcat(&#39;todos&#39;,this)">🗂️ Todos</button>
-    <button class="tag" data-cat="orientacoes" onclick="setcat(&#39;orientacoes&#39;,this)">📋 Orientações</button>
-    <button class="tag" data-cat="resultados" onclick="setcat(&#39;resultados&#39;,this)">🏆 Resultados</button>
-    <button class="tag" data-cat="alinhamentos" onclick="setcat(&#39;alinhamentos&#39;,this)">🤝 Alinhamentos</button>
-    <button class="tag" data-cat="produto" onclick="setcat(&#39;produto&#39;,this)">🛍️ Produto</button>
-    <button class="tag" data-cat="transportes" onclick="setcat(&#39;transportes&#39;,this)">🚚 Transportes</button>
-    <button class="tag" data-cat="campanhas" onclick="setcat(&#39;campanhas&#39;,this)">📣 Campanhas</button>
-    <button class="tag" data-cat="cupons" onclick="setcat(&#39;cupons&#39;,this)">🎟️ Cupons</button>
-    <button class="tag" data-cat="grupos" onclick="setcat(&#39;grupos&#39;,this)">👥 Grupos Especiais</button>
-    <button class="tag" data-cat="dicas" onclick="setcat(&#39;dicas&#39;,this)">💡 Dicas</button>
-    <button class="tag" data-cat="melhorias" onclick="setcat(&#39;melhorias&#39;,this)">⚙️ Melhorias</button>
-    <button class="tag" data-cat="elogios" onclick="setcat(&#39;elogios&#39;,this)">⭐ Elogios</button>
-    <button class="tag" data-cat="nossasagendas" onclick="setcat(&#39;nossasagendas&#39;,this)">📅 Nossas Agendas</button>
-    <button class="tag" data-cat="diariobordo" onclick="setcat(&#39;diariobordo&#39;,this)">📓 Diário de Bordo</button>
+    <button class="tag active" data-cat="todos" onclick="setcat('todos',this)">🗂️ Todos</button>
+    <button class="tag" data-cat="orientacoes" onclick="setcat('orientacoes',this)">📋 Orientações</button>
+    <button class="tag" data-cat="resultados" onclick="setcat('resultados',this)">🏆 Resultados</button>
+    <button class="tag" data-cat="alinhamentos" onclick="setcat('alinhamentos',this)">🤝 Alinhamentos</button>
+    <button class="tag" data-cat="produto" onclick="setcat('produto',this)">🛍️ Produto</button>
+    <button class="tag" data-cat="transportes" onclick="setcat('transportes',this)">🚚 Transportes</button>
+    <button class="tag" data-cat="campanhas" onclick="setcat('campanhas',this)">📣 Campanhas</button>
+    <button class="tag" data-cat="cupons" onclick="setcat('cupons',this)">🎟️ Cupons</button>
+    <button class="tag" data-cat="grupos" onclick="setcat('grupos',this)">👥 Grupos Especiais</button>
+    <button class="tag" data-cat="dicas" onclick="setcat('dicas',this)">💡 Dicas</button>
+    <button class="tag" data-cat="melhorias" onclick="setcat('melhorias',this)">⚙️ Melhorias</button>
+    <button class="tag" data-cat="elogios" onclick="setcat('elogios',this)">⭐ Elogios</button>
+    <button class="tag" data-cat="nossasagendas" onclick="setcat('nossasagendas',this)">📅 Nossas Agendas</button>
+    <button class="tag" data-cat="diariobordo" onclick="setcat('diariobordo',this)">📓 Diário de Bordo</button>
   </div>
   <div class="tags-section">
     <span class="tags-label">Marca:</span>
-    <button class="tag-marca" data-marca="INV" onclick="togglemarca(&#39;INV&#39;,this)">INV</button>
-    <button class="tag-marca" data-marca="GLP" onclick="togglemarca(&#39;GLP&#39;,this)">GLP</button>
-    <button class="tag-marca" data-marca="GLP+INV" onclick="togglemarca(&#39;GLP+INV&#39;,this)">GLP+INV</button>
+    <button class="tag-marca" data-marca="INV" onclick="togglemarca('INV',this)">INV</button>
+    <button class="tag-marca" data-marca="GLP" onclick="togglemarca('GLP',this)">GLP</button>
+    <button class="tag-marca" data-marca="GLP+INV" onclick="togglemarca('GLP+INV',this)">GLP+INV</button>
   </div>
 </div>
 
 <div class="divider">
   <p class="count">Exibindo <span id="total">0</span> publicações · <span id="nao-lidas-count" style="color:#c82a2a">0 não lidas</span></p>
   <button class="sync-btn" onclick="carregar()">
-    <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+    <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
     Atualizar
   </button>
 </div>
@@ -245,7 +245,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 
 <div class="overlay" id="overlay" onclick="fechar(event)">
   <div class="modal">
-    <img class="modal-img" id="m-img" src="file:///C:/Users/andreia.machado/Downloads/portal-comunicacao.html" alt="" style="display:none">
+    <img class="modal-img" id="m-img" src="" alt="" style="display:none">
     <div class="modal-head">
       <div><div id="m-pill"></div><h2 class="modal-title" id="m-titulo"></h2></div>
       <button class="modal-close" onclick="fecharDireto()">✕</button>
@@ -264,7 +264,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 </div>
 
 <script>
-const API_URL = 'https://script.google.com/macros/s/AKfycbzfT0TdyxG3RBOeANAxOTtsbTljB9M8jGuTpVDNaKlbZFn9JlzJJjr21FmFQuq4FRhxlA/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbxWVZTEKLdGR4zo_RSv6GZa7a-cEXF5o6z3CdvlKbi1K1Ql5AR__OcstvPtrZafAtI28w/exec';
 const MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 const DIAS=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
 const CORES=['#4669AF','#2a8a5a','#7a5aaf','#c87a2a','#2a8aaf','#c84a7a','#e8a020','#c83a2a'];
@@ -322,9 +322,17 @@ let posts=[], catAtiva='todos', marcaAtiva='todos';
 function carregar(){
   const ic=document.getElementById('sync');
   ic.classList.add('spin');
-  fetch(API_URL)
-    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
-    .then(rows=>{
+  const cbName='_cb'+Date.now();
+  const timer=setTimeout(()=>{
+    ic.classList.remove('spin');
+    delete window[cbName];
+    document.getElementById('grid').innerHTML='<div class="empty">⚠️<p style="margin-top:0.5rem">Não foi possível conectar. Tente novamente.</p></div>';
+  },10000);
+  window[cbName]=function(rows){
+    clearTimeout(timer);
+    ic.classList.remove('spin');
+    delete window[cbName];
+    (function(rows){
       ic.classList.remove('spin');
       if(!rows.length){
         document.getElementById('grid').innerHTML='<div class="empty">📋<p style="margin-top:0.5rem">Planilha conectada mas sem publicações.</p></div>';
@@ -352,12 +360,12 @@ function carregar(){
       }).filter(p=>p.titulo);
       atualizarNotificacoes();
       render();
-    })
-    .catch(e=>{
-    ic.classList.remove('spin');
-    document.getElementById('grid').innerHTML='<div class="empty">⚠️<p style="margin-top:0.5rem">Não foi possível conectar. Clique em <b>Atualizar</b> para tentar novamente.</p></div>';
-    console.warn('Erro:',e);
-  });
+    })(rows);
+  };
+  const s=document.createElement('script');
+  s.src=API_URL+'?callback='+cbName;
+  s.onerror=()=>{clearTimeout(timer);ic.classList.remove('spin');delete window[cbName];document.getElementById('grid').innerHTML='<div class="empty">⚠️<p style="margin-top:0.5rem">Não foi possível conectar.</p></div>';};
+  document.head.appendChild(s);
 }
 
 function atualizarNotificacoes(){
@@ -467,5 +475,5 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharDireto();});
 
 carregar();
 </script>
-
-</body></html>
+</body>
+</html>
