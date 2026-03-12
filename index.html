@@ -436,30 +436,56 @@ function loadPosts() {
     render();
   }
 
-  // Usa proxy para evitar bloqueio CORS do GitHub Pages
-  const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(CSV_URL);
-  fetch(proxyUrl)
-    .then(r => r.json())
-    .then(data => {
-      const parsed = parseCSV(data.contents);
-      icon.classList.remove('spin');
-      const banner = document.getElementById('config-banner');
+  // JSONP via Google Visualization API — funciona cross-origin sem proxy
+  const cbName = '_cb' + Date.now();
+  const gvizUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&callback=' + cbName;
+
+  const timer = setTimeout(() => {
+    icon.classList.remove('spin');
+    console.warn('Timeout ao conectar planilha');
+    if (window[cbName]) delete window[cbName];
+  }, 10000);
+
+  window[cbName] = function(data) {
+    clearTimeout(timer);
+    icon.classList.remove('spin');
+    delete window[cbName];
+    const banner = document.getElementById('config-banner');
+    try {
+      const rows = data.table?.rows || [];
+      const cols = data.table?.cols || [];
+      if (rows.length === 0) {
+        if (banner) { const bt = banner.querySelector('.banner-text'); if(bt) bt.textContent = 'Planilha vazia. Adicione publicações!'; }
+        return;
+      }
+      const idx = {};
+      cols.forEach((c, i) => { if(c.label) idx[c.label.toLowerCase().trim()] = i; });
+      const norm = s => (s||'').toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g,'');
+      const getIdx = (...ls) => { for(const l of ls){ const k=Object.keys(idx).find(k=>norm(k)===norm(l)); if(k!==undefined) return idx[k]; } return -1; };
+      const iD=getIdx('data'), iC=getIdx('categoria'), iT=getIdx('titulo','título','title');
+      const iN=getIdx('noticia','notícia','conteudo','conteúdo','texto','mensagem');
+      const iR=getIdx('resumo'), iA=getIdx('autor','author'), iF=getIdx('fixado','pin');
+      const gv = (row,i) => i>=0 && row.c[i]?.v!=null ? String(row.c[i].v) : '';
+      const parsed = rows.map((row,i) => {
+        const n=gv(row,iN);
+        return { id:i, data:formatISODate(gv(row,iD)), cat:normalizeCat(gv(row,iC)),
+          titulo:gv(row,iT), resumo:gv(row,iR)||n.substring(0,160)+(n.length>160?'...':''),
+          conteudo:n.replace(/
+/g,'<br>'), autor:gv(row,iA)||'Time',
+          pinned:gv(row,iF).toLowerCase()==='sim', _color:AVATAR_COLORS[i%AVATAR_COLORS.length] };
+      }).filter(p=>p.titulo);
       if (parsed.length > 0) {
         posts = parsed;
         if (banner) banner.style.display = 'none';
-      } else {
-        if (banner) {
-          const bt = banner.querySelector('.banner-text');
-          if (bt) bt.textContent = 'Planilha conectada, mas sem publicações ainda. Adicione linhas na planilha!';
-        }
+        render();
       }
-      render();
-    })
-    .catch(e => {
-      console.warn('Erro ao buscar planilha:', e);
-      icon.classList.remove('spin');
-      render();
-    });
+    } catch(e) { console.warn('Erro ao processar:', e); }
+  };
+
+  const s = document.createElement('script');
+  s.src = gvizUrl;
+  s.onerror = () => { clearTimeout(timer); icon.classList.remove('spin'); if(window[cbName]) delete window[cbName]; };
+  document.head.appendChild(s);
 }
 
 // ── FILTERS ───────────────────────────────────────────────
