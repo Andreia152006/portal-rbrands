@@ -51,6 +51,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 .tag[data-cat="grupos"].active{background:#5a7aaf}
 .tag[data-cat="dicas"].active{background:#4aafa0}
 .tag[data-cat="alinhamentos"].active{background:#7a5aaf}
+.tag[data-cat="agendas"].active{background:#4a6abf}
 .tag[data-cat="produto"].active{background:#c87a2a}
 .divider{max-width:1300px;margin:0 auto;padding:0 2rem;border-top:1px solid var(--border);padding-top:1.2rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
 .count{font-size:0.71rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase}
@@ -82,6 +83,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 .pill-cupons{background:rgba(175,70,105,0.1);color:#af4669}
 .pill-grupos{background:rgba(90,122,175,0.1);color:#5a7aaf}
 .pill-dicas{background:rgba(74,175,160,0.1);color:#4aafa0}
+.pill-agendas{background:rgba(100,130,200,0.1);color:#4a6abf}
 .card-title{font-family:'DM Serif Display',serif;font-size:0.97rem;line-height:1.3;color:var(--text);margin-bottom:0.45rem}
 .card-excerpt{font-size:0.78rem;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card-footer{padding:0.7rem 1.1rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
@@ -159,7 +161,8 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
     <button class="tag" data-cat="dicas" onclick="setcat('dicas',this)">💡 Dicas de Atendimento</button>
     <button class="tag" data-cat="melhorias" onclick="setcat('melhorias',this)">⚙️ Melhorias</button>
     <button class="tag" data-cat="elogios" onclick="setcat('elogios',this)">⭐ Elogios</button>
-    <button class="tag" data-cat="outros" onclick="setcat('outros',this)">📌 Outros</button>
+    <button class="tag" data-cat="agendas" onclick="setcat('agendas',this)">📅 Nossas Agendas</button>
+    <button class="tag" data-cat="outros" onclick="setcat('outros',this)">📅 Nossas Agendas</button>
   </div>
 </div>
 
@@ -210,20 +213,21 @@ const CATS = {
   melhorias:['melhorias','melhoria','melhirias','melhiria'],
   elogios:['elogios','elogio'],
   urgente:['urgente'],
-  outros:['outros','outro','geral','nossas agendas','agendas','sistemas','sistema'],
+  agendas:['nossas agendas','agendas','nossa agenda'],
+  outros:['outros','outro','geral','sistemas','sistema'],
 };
 
 const PILLCLS = {
   orientacoes:'pill-default',resultados:'pill-resultados',alinhamentos:'pill-alinhamentos',
   produto:'pill-produto',transportes:'pill-transportes',campanhas:'pill-campanhas',
   cupons:'pill-cupons',grupos:'pill-grupos',dicas:'pill-dicas',
-  melhorias:'pill-melhorias',elogios:'pill-elogios',urgente:'pill-urgente',outros:'pill-default'
+  melhorias:'pill-melhorias',elogios:'pill-elogios',urgente:'pill-urgente',agendas:'pill-agendas',outros:'pill-default'
 };
 const PILLLBL = {
   orientacoes:'📋 Orientações',resultados:'🏆 Resultados',alinhamentos:'🤝 Alinhamentos',
   produto:'🛍️ Produto',transportes:'🚚 Transportes',campanhas:'📣 Campanhas',
   cupons:'🎟️ Cupons',grupos:'👥 Grupos',dicas:'💡 Dicas',
-  melhorias:'⚙️ Melhorias',elogios:'⭐ Elogios',urgente:'🚨 Urgente',outros:'📌 Outros'
+  melhorias:'⚙️ Melhorias',elogios:'⭐ Elogios',urgente:'🚨 Urgente',agendas:'📅 Nossas Agendas',outros:'📅 Nossas Agendas'
 };
 
 function normCat(raw){
