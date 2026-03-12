@@ -256,39 +256,51 @@ document.getElementById('hoje').textContent=`${DIAS[hoje.getDay()]}, ${hoje.getD
 let posts=[], catAtiva='todos';
 
 // CARREGAR PLANILHA
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vThB3GCrNgMfQqKY6f2FbRoKfsB3NF5WwCfKkQl0Q9Vn-4pL8NdxtrpMyqjWPbGxuEH4gDShUKL93T-/pub?gid=0&single=true&output=csv';
+
+function parseCSV(text){
+  const lines=text.split('\n').filter(l=>l.trim());
+  if(lines.length<2)return[];
+  function splitLine(line){const r=[];let cur='';let q=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'){q=!q}else if(c===','&&!q){r.push(cur.trim());cur=''}else{cur+=c}}r.push(cur.trim());return r;}
+  const norm=s=>(s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const headers=splitLine(lines[0]).map(h=>norm(h.replace(/^"|"$/g,'')));
+  const gi=(...ls)=>{for(const l of ls){const i=headers.findIndex(h=>h===norm(l));if(i>=0)return i}return -1};
+  const iD=gi('data'),iC=gi('categoria'),iT=gi('titulo','título','title');
+  const iN=gi('noticias','notícias','noticia','notícia','conteudo','conteúdo','texto','mensagem');
+  const iR=gi('resumo'),iA=gi('autor','author'),iF=gi('fixado','pin');
+  return lines.slice(1).map((line,i)=>{
+    const cols=splitLine(line).map(c=>c.replace(/^"|"$/g,'').trim());
+    const get=idx=>idx>=0?(cols[idx]||''):'';
+    const nt=get(iN);
+    return{id:i,data:normData(get(iD)),cat:normCat(get(iC)),titulo:get(iT),
+      resumo:get(iR)||nt.substring(0,160)+(nt.length>160?'...':''),
+      conteudo:nt.replace(/\n/g,'<br>'),autor:get(iA)||'Time',
+      pinned:(get(iF)||'').toLowerCase().trim()==='sim',_cor:CORES[i%CORES.length]};
+  }).filter(p=>p.titulo);
+}
+
 function carregar(){
   const ic=document.getElementById('sync');
   ic.classList.add('spin');
-  const cb='_cb'+Date.now();
-  const url=`https://docs.google.com/spreadsheets/d/1z5_bN9H0y0mRoIZu2eMiU2O0rpOiOn6uk9qrgA-qq5Q/gviz/tq?tqx=out:json&callback=${cb}`;
-  const timer=setTimeout(()=>{ic.classList.remove('spin');delete window[cb];setBanner('⚠️ Não foi possível conectar. Verifique se a planilha está pública.')},8000);
-  window[cb]=function(d){
-    clearTimeout(timer);ic.classList.remove('spin');delete window[cb];
-    try{
-      const rows=d.table?.rows||[];
-      const cols=d.table?.cols||[];
-      if(!rows.length){setBanner('Planilha conectada mas vazia. Adicione dados!');return}
-      const idx={};cols.forEach((c,i)=>{if(c.label)idx[c.label.toLowerCase().trim()]=i});
-      const n=s=>(s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-      const gi=(...ls)=>{for(const l of ls){const k=Object.keys(idx).find(k=>n(k)===n(l));if(k!==undefined)return idx[k]}return-1};
-      const iD=gi('data'),iC=gi('categoria'),iT=gi('titulo','título','title');
-      const iN=gi('noticias','notícias','noticia','notícia','conteudo','conteúdo','texto','mensagem','news');
-      const iR=gi('resumo'),iA=gi('autor','author'),iF=gi('fixado','pin');
-      const gv=(row,i)=>i>=0&&row.c[i]?.v!=null?String(row.c[i].v):'';
-      posts=rows.map((row,i)=>{
-        const nt=gv(row,iN);
-        return{id:i,data:normData(gv(row,iD)),cat:normCat(gv(row,iC)),titulo:gv(row,iT),
-          resumo:gv(row,iR)||nt.substring(0,160)+(nt.length>160?'...':''),
-          conteudo:nt.replace(/\n/g,'<br>'),autor:gv(row,iA)||'Time',
-          pinned:gv(row,iF).toLowerCase()==='sim',_cor:CORES[i%CORES.length]};
-      }).filter(p=>p.titulo);
-      document.getElementById('banner').parentElement.style.display='none';
-      render();
-    }catch(e){setBanner('Erro ao processar planilha: '+e.message)}
-  };
-  const s=document.createElement('script');s.src=url;
-  s.onerror=()=>{clearTimeout(timer);ic.classList.remove('spin');setBanner('Erro ao carregar planilha.');delete window[cb]};
-  document.head.appendChild(s);
+  const proxy='https://corsproxy.io/?'+encodeURIComponent(CSV_URL);
+  fetch(proxy)
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})
+    .then(text=>{
+      ic.classList.remove('spin');
+      const parsed=parseCSV(text);
+      if(parsed.length>0){
+        posts=parsed;
+        document.getElementById('banner').parentElement.style.display='none';
+        render();
+      } else {
+        setBanner('Planilha conectada mas sem publicações. Adicione dados!');
+      }
+    })
+    .catch(e=>{
+      ic.classList.remove('spin');
+      setBanner('⚠️ Não foi possível conectar. Tente novamente.');
+      console.warn('Erro:',e);
+    });
 }
 
 function setBanner(msg){const b=document.getElementById('banner');if(b)b.childNodes[0].textContent=msg}
