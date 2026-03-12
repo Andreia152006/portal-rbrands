@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_5.html -->
+<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_7.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -256,7 +256,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 
 <div class="overlay" id="overlay" onclick="fechar(event)">
   <div class="modal">
-    <img class="modal-img" id="m-img" src="file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_5.html" alt="" style="display:none">
+    <img class="modal-img" id="m-img" src="file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_7.html" alt="" style="display:none">
     <div class="modal-head">
       <div><div id="m-pill"></div><h2 class="modal-title" id="m-titulo"></h2></div>
       <button class="modal-close" onclick="fecharDireto()">✕</button>
@@ -337,12 +337,16 @@ function carregar(){
     .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
     .then(rows=>{
       ic.classList.remove('spin');
-      if(!rows.length)return;
+      if(!rows.length){
+        document.getElementById('grid').innerHTML='<div class="empty">📋<p style="margin-top:0.5rem">Planilha conectada mas sem publicações.</p></div>';
+        return;
+      }
       const n=s=>(s||'').toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g,'');
       const gk=(row,...ls)=>{for(const l of ls){const k=Object.keys(row).find(k=>n(k)===n(l));if(k)return String(row[k]||'');}return''};
       posts=rows.map((row,i)=>{
         const nt=gk(row,'noticias','notícias','noticia','notícia','conteudo','texto');
-        const marca=(gk(row,'marca')||'').trim().toUpperCase();
+        const marcaRaw=(gk(row,'marca')||'').trim().toUpperCase().replace(/\s*\+\s*/g,'+');
+        const marca=marcaRaw;
         const img=gk(row,'imagem','image','img')||'';
         return{id:i,
           data:normData(gk(row,'data')),
@@ -360,7 +364,11 @@ function carregar(){
       atualizarNotificacoes();
       render();
     })
-    .catch(e=>{ic.classList.remove('spin');console.warn('Erro:',e);});
+    .catch(e=>{
+    ic.classList.remove('spin');
+    document.getElementById('grid').innerHTML='<div class="empty">⚠️<p style="margin-top:0.5rem">Não foi possível conectar. Clique em <b>Atualizar</b> para tentar novamente.</p></div>';
+    console.warn('Erro:',e);
+  });
 }
 
 function atualizarNotificacoes(){
