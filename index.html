@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0069)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_10.html -->
+<!-- saved from url=(0069)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_12.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 <link href="./Rbrands · Comunicação D2C_files/css2" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f0f4fa;--surface:#fff;--surface2:#e8eef8;--border:#d0daea;--text:#1a2235;--muted:#6a7a9a;--accent:#4669AF;--accent2:#3558a0;--accent-light:#93B4DE;}
+:root{--bg:#f0f4fa;--surface:#fff;--surface2:#e8eef8;--border:#d0daea;--text:#1a2235;--muted:#6a7a9a;--accent:#4669AF;--accent-light:#93B4DE;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh}
 header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 12px rgba(70,105,175,0.08)}
 .logo{display:flex;align-items:center;gap:12px}
@@ -64,7 +64,6 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 .grid{max-width:1300px;margin:0 auto;padding:0 2rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
 .card{background:var(--surface);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s;animation:fadeUp .35s ease both;box-shadow:0 2px 8px rgba(70,105,175,0.05)}
 .card:hover{border-color:var(--accent-light);transform:translateY(-3px);box-shadow:0 10px 28px rgba(70,105,175,0.12)}
-.card.pinned{border-color:rgba(70,105,175,0.35)}
 .card.pinned::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light))}
 .card.elogio{border-color:rgba(232,160,32,0.4);background:linear-gradient(135deg,#fffdf5,#fff8e8)}
 .card.elogio::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#e8a020,#f5c842)}
@@ -79,7 +78,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 .pill-melhorias{background:rgba(90,175,106,0.1);color:#5aaf6a}
 .pill-elogios{background:rgba(232,160,32,0.15);color:#b87a10}
 .pill-diariobordo{background:rgba(122,90,175,0.1);color:#7a5aaf}
-.pill-alinhamentos{background:rgba(122,90,175,0.1);color:#7a5aaf}
+.pill-alinhamentos{background:rgba(100,80,160,0.1);color:#6450a0}
 .pill-produto{background:rgba(200,122,42,0.1);color:#c87a2a}
 .pill-cupons{background:rgba(175,70,105,0.1);color:#af4669}
 .pill-grupos{background:rgba(90,122,175,0.1);color:#5a7aaf}
@@ -110,14 +109,12 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 .modal-author{font-size:0.82rem;color:var(--text)}
 .modal-date{font-size:0.76rem;color:var(--muted);margin-left:auto}
 .modal-content{font-size:0.9rem;line-height:1.85;color:#445}
-.modal-content p{margin-bottom:0.8rem}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:3px}
 @media(max-width:600px){.hero,.controls,.divider,.links,.grid{padding-left:1rem;padding-right:1rem}.grid{grid-template-columns:1fr}header{padding:0 1rem}}
 </style>
-</head>
+<script id="gviz-script" src="./Rbrands · Comunicação D2C_files/json.txt"></script></head>
 <body>
-
 <header>
   <div class="logo">
     <span class="logo-text">RBRANDS</span>
@@ -132,25 +129,21 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
     <span class="badge">Pós-Venda</span>
   </div>
 </header>
-
 <div class="notif-banner" id="notif-banner" style="display:none">
   <div class="notif-inner" onclick="verNovidades()">
     <span id="notif-texto">🔔 Você tem publicações novas!</span>
     <button class="notif-close" onclick="event.stopPropagation();document.getElementById(&#39;notif-banner&#39;).style.display=&#39;none&#39;">✕</button>
   </div>
 </div>
-
 <div class="hero">
   <p class="hero-label">✦ Pós-Venda · Invictus &amp; Galápagos</p>
   <h1>Tudo num só lugar.<br><em>Comunicação simplificada.</em></h1>
   <p class="hero-date" id="hoje">Quinta-feira, 12 de Março de 2026</p>
 </div>
-
 <div class="links">
   <a class="link-btn" href="https://www.invictus.com.br/" target="_blank">🌐 Site Invictus</a>
   <a class="link-btn" href="https://galapagosoutdoor.com.br/" target="_blank">🌐 Site Galápagos</a>
 </div>
-
 <div class="controls">
   <div class="search-row">
     <div class="search-wrap">
@@ -184,17 +177,18 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
     <button class="tag-marca" data-marca="GLP+INV" onclick="setmarca(&#39;GLP+INV&#39;,this)">GLP+INV</button>
   </div>
 </div>
-
 <div class="divider">
-  <p class="count">Exibindo <span id="total">0</span> publicações · <span id="nao-lidas-count" style="color:#c82a2a"></span></p>
+  <p class="count">Exibindo <span id="total">6</span> publicações · <span id="nao-lidas-count" style="color:#c82a2a"></span></p>
   <button class="sync-btn" onclick="carregar()">
     <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class=""><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
     Atualizar
   </button>
 </div>
-
-<div class="grid" id="grid"><div class="empty">⚠️<p style="margin-top:0.5rem">Tempo esgotado. Verifique se a planilha está publicada na web.</p></div></div>
-
+<div class="grid" id="grid"><div class="card" style="animation-delay: 0s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-transportes">🚚 Transportes</span></div></div><h3 class="card-title">📦 Reunião 03/03 – J&amp;T Express</h3><p class="card-excerpt">📍 Alteração de Endereço
+Quando e como pode alterar:
+✅ Sempre será o CEP que direciona a entrega.
+✅ CEP único: não há problema em alterar o nome da rua.
+⚠️ Alte...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#4669AF">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.05s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP- Semana do Consumidor</h3><p class="card-excerpt">Compre e Ganha - De 04 a 20/03 em compras acima de R$ 499 Ganhe copo Cave e acima de R$ 899 garrafa River</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8a5a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.1s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP - Programa Afiliados</h3><p class="card-excerpt">Agora a Galapagos terá um programa de afiliados, leia a notícia nesse link: https://galapagos.pilea.app/influencers</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#7a5aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card elogio" style="animation-delay: 0.15s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-elogios">⭐ Elogios</span></div></div><h3 class="card-title">Elogio Time</h3><p class="card-excerpt">O serviço da Invictus e impecável, da compra ao atendimento tudo muito perfeito só tenho a agradecer...a toda esquipe.</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c87a2a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.2s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-melhorias">⚙️ Melhorias</span></div></div><h3 class="card-title">Implantação Garantia - Troquecommerce</h3><p class="card-excerpt">Demos inicio a implantação do processo de Garantia dentro da Ferramenta do Troquecommerce, previsão que na próxima semana já tenhamos o Golive, vamos fazer um t...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.25s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📅 Nossas Agendas</span></div></div><h3 class="card-title">Treinamento Garantia - Troque</h3><p class="card-excerpt">Alinhamentos do funcionamento da garantia dentro Troquecommerce</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c84a7a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div></div>
 <div class="overlay" id="overlay" onclick="fechar(event)">
   <div class="modal">
     <div class="modal-head">
@@ -213,300 +207,134 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
     </div>
   </div>
 </div>
-
 <script>
-// Google Visualization API - sem CORS, sem proxy, sem Apps Script!
 var SHEET_ID = '1z5_bN9H0y0mRoIZu2eMiU2O0rpOiOn6uk9qrgA-qq5Q';
-var SHEET_NAME = '';
-var GVZ_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&sheet=P%C3%A1gina1';
+var MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+var DIAS=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+var CORES=['#4669AF','#2a8a5a','#7a5aaf','#c87a2a','#2a8aaf','#c84a7a','#e8a020','#c83a2a'];
+var CATS={orientacoes:['orientacoes e procedimentos','orientações e procedimentos','orientacao','orientações','orientacoes','procedimentos'],resultados:['nossos resultados','resultados','resultado'],alinhamentos:['alinhamentos','alinhamento'],produto:['produto','produtos'],transportes:['transportes','transporte','entrega','entregas','frete'],campanhas:['campanhas','campanha'],cupons:['cupons','cupom'],grupos:['grupos especiais','grupo especial','grupos','grupo'],dicas:['dica de atendimentos','dicas de atendimento','dicas','dica'],melhorias:['melhorias','melhoria','melhirias','melhiria'],elogios:['elogios','elogio'],nossasagendas:['nossas agendas','nossa agenda'],diariobordo:['diario de bordo','diário de bordo','diario bordo']};
+var PILLCLS={orientacoes:'pill-default',resultados:'pill-resultados',alinhamentos:'pill-alinhamentos',produto:'pill-produto',transportes:'pill-transportes',campanhas:'pill-campanhas',cupons:'pill-cupons',grupos:'pill-grupos',dicas:'pill-dicas',melhorias:'pill-melhorias',elogios:'pill-elogios',nossasagendas:'pill-default',diariobordo:'pill-diariobordo',outros:'pill-default'};
+var PILLLBL={orientacoes:'📋 Orientações',resultados:'🏆 Resultados',alinhamentos:'🤝 Alinhamentos',produto:'🛍️ Produto',transportes:'🚚 Transportes',campanhas:'📣 Campanhas',cupons:'🎟️ Cupons',grupos:'👥 Grupos',dicas:'💡 Dicas',melhorias:'⚙️ Melhorias',elogios:'⭐ Elogios',nossasagendas:'📅 Nossas Agendas',diariobordo:'📓 Diário de Bordo',outros:'📌 Outros'};
 
-var MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-var DIAS = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
-var CORES = ['#4669AF','#2a8a5a','#7a5aaf','#c87a2a','#2a8aaf','#c84a7a','#e8a020','#c83a2a'];
+function norm(s){return(s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+function normCat(raw){var v=norm(raw);var ks=Object.keys(CATS);for(var i=0;i<ks.length;i++){var arr=CATS[ks[i]];for(var j=0;j<arr.length;j++){if(norm(arr[j])===v)return ks[i];}}return'outros';}
+function normData(val){if(!val)return'';var s=String(val).trim();if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;var m=s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})$/);if(m){var y=m[3].length===2?'20'+m[3]:m[3];return y+'-'+('0'+m[2]).slice(-2)+'-'+('0'+m[1]).slice(-2);}try{var d=new Date(val);if(!isNaN(d))return d.toISOString().split('T')[0];}catch(e){}return'';}
+function fmt(d){if(!d)return'';var p=d.split('-');var ms=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];return parseInt(p[2])+' '+ms[parseInt(p[1])-1]+' '+p[0];}
+function fmtFull(d){if(!d)return'';var p=d.split('-');return parseInt(p[2])+' de '+MESES[parseInt(p[1])-1]+' de '+p[0];}
+function ini(s){return((s||'').split(' ').map(function(w){return w[0]||'';}).join('').substring(0,2).toUpperCase());}
+function gk(row){for(var i=1;i<arguments.length;i++){var lbl=arguments[i];var ks=Object.keys(row);for(var j=0;j<ks.length;j++){if(norm(ks[j])===norm(lbl))return String(row[ks[j]]||'');}}return'';}
 
-var CATS = {
-  orientacoes:['orientacoes e procedimentos','orientações e procedimentos','orientacao','orientações','orientacoes','procedimentos'],
-  resultados:['nossos resultados','resultados','resultado'],
-  alinhamentos:['alinhamentos','alinhamento'],
-  produto:['produto','produtos'],
-  transportes:['transportes','transporte','entrega','entregas','frete'],
-  campanhas:['campanhas','campanha'],
-  cupons:['cupons','cupom'],
-  grupos:['grupos especiais','grupo especial','grupos','grupo'],
-  dicas:['dica de atendimentos','dicas de atendimento','dicas','dica'],
-  melhorias:['melhorias','melhoria','melhirias','melhiria'],
-  elogios:['elogios','elogio'],
-  nossasagendas:['nossas agendas','nossa agenda'],
-  diariobordo:['diario de bordo','diário de bordo','diario bordo']
-};
-var PILLCLS = {orientacoes:'pill-default',resultados:'pill-resultados',alinhamentos:'pill-alinhamentos',produto:'pill-produto',transportes:'pill-transportes',campanhas:'pill-campanhas',cupons:'pill-cupons',grupos:'pill-grupos',dicas:'pill-dicas',melhorias:'pill-melhorias',elogios:'pill-elogios',nossasagendas:'pill-default',diariobordo:'pill-diariobordo',outros:'pill-default'};
-var PILLLBL = {orientacoes:'📋 Orientações',resultados:'🏆 Resultados',alinhamentos:'🤝 Alinhamentos',produto:'🛍️ Produto',transportes:'🚚 Transportes',campanhas:'📣 Campanhas',cupons:'🎟️ Cupons',grupos:'👥 Grupos',dicas:'💡 Dicas',melhorias:'⚙️ Melhorias',elogios:'⭐ Elogios',nossasagendas:'📅 Nossas Agendas',diariobordo:'📓 Diário de Bordo',outros:'📌 Outros'};
+var hoje=new Date();
+document.getElementById('hoje').textContent=DIAS[hoje.getDay()]+', '+hoje.getDate()+' de '+MESES[hoje.getMonth()]+' de '+hoje.getFullYear();
+function getLidas(){try{return JSON.parse(localStorage.getItem('lidas')||'[]');}catch(e){return[];}}
+function marcarLida(id){var l=getLidas();if(l.indexOf(id)<0){l.push(id);localStorage.setItem('lidas',JSON.stringify(l));}}
+function isNovo(d){if(!d)return false;return(new Date()-new Date(d))/864e5<=3;}
 
-function norm(s){ return (s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+var posts=[],catAtiva='todos',marcaAtiva='todos';
 
-function normCat(raw) {
-  var v = norm(raw);
-  var keys = Object.keys(CATS);
-  for (var i=0; i<keys.length; i++) {
-    var k = keys[i];
-    var ls = CATS[k];
-    for (var j=0; j<ls.length; j++) {
-      if (norm(ls[j]) === v) return k;
-    }
-  }
-  return 'outros';
-}
-
-function normData(val) {
-  if (!val) return '';
-  var s = String(val).trim();
-  // Already ISO
-  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
-  // DD/MM/YYYY
-  var m = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})$/);
-  if (m) {
-    var y = m[3].length===2 ? '20'+m[3] : m[3];
-    return y + '-' + String(m[2]).padStart(2,'0') + '-' + String(m[1]).padStart(2,'0');
-  }
-  // Google date format: Date(2026,2,3) = March 3, 2026 (month is 0-indexed)
-  var gm = s.match(/Date\((\d+),(\d+),(\d+)\)/);
-  if (gm) {
-    var y2 = gm[1];
-    var mo = String(parseInt(gm[2])+1).padStart(2,'0');
-    var d2 = String(gm[3]).padStart(2,'0');
-    return y2+'-'+mo+'-'+d2;
-  }
-  try { var dt=new Date(val); if(!isNaN(dt)) return dt.toISOString().split('T')[0]; } catch(e) {}
-  return '';
-}
-
-function fmt(d) {
-  if (!d) return '';
-  var p = d.split('-');
-  var meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
-  return parseInt(p[2]) + ' ' + meses[parseInt(p[1])-1] + ' ' + p[0];
-}
-function fmtFull(d) {
-  if (!d) return '';
-  var p = d.split('-');
-  return parseInt(p[2]) + ' de ' + MESES[parseInt(p[1])-1] + ' de ' + p[0];
-}
-function ini(s) { return ((s||'').split(' ').map(function(w){return w[0]||'';}).join('').substring(0,2).toUpperCase()); }
-
-var hoje = new Date();
-document.getElementById('hoje').textContent = DIAS[hoje.getDay()] + ', ' + hoje.getDate() + ' de ' + MESES[hoje.getMonth()] + ' de ' + hoje.getFullYear();
-
-function getLidas() { try { return JSON.parse(localStorage.getItem('lidas')||'[]'); } catch(e) { return []; } }
-function marcarLida(id) { var l=getLidas(); if(!l.includes(id)){l.push(id);localStorage.setItem('lidas',JSON.stringify(l));} }
-function isNovo(dataStr) { if(!dataStr)return false; var diff=(new Date()-new Date(dataStr))/(1000*60*60*24); return diff<=3; }
-
-var posts = [];
-var catAtiva = 'todos';
-var marcaAtiva = 'todos';
-
-function carregar() {
-  var ic = document.getElementById('sync');
-  ic.classList.add('spin');
-  document.getElementById('grid').innerHTML = '<div class="empty">⏳<p style="margin-top:0.5rem">Carregando publicações...</p></div>';
-
-  var cbName = '_gvzcb' + Date.now();
-  var script = document.createElement('script');
-  var timer = setTimeout(function() {
-    ic.classList.remove('spin');
-    delete window[cbName];
-    if(script.parentNode) script.parentNode.removeChild(script);
-    document.getElementById('grid').innerHTML = '<div class="empty">⚠️<p style="margin-top:0.5rem">Tempo esgotado. Verifique se a planilha está publicada na web.</p></div>';
-  }, 12000);
-
-  window[cbName] = function(resp) {
-    clearTimeout(timer);
-    ic.classList.remove('spin');
-    delete window[cbName];
-    if(script.parentNode) script.parentNode.removeChild(script);
-
-    try {
-      var table = resp.table;
-      if (!table || !table.rows || !table.rows.length) {
-        document.getElementById('grid').innerHTML = '<div class="empty">📋<p style="margin-top:0.5rem">Planilha sem publicações.</p></div>';
-        return;
-      }
-
-      // Build headers from cols
-      var headers = table.cols.map(function(c){ return c.label || ''; });
-
-      // Build rows
-      var rows = table.rows.map(function(row, i) {
-        var obj = {};
-        headers.forEach(function(h, j) {
-          var cell = row.c[j];
-          obj[h] = (cell && cell.v !== null && cell.v !== undefined) ? String(cell.v) : '';
-        });
-        return obj;
-      });
-
-      function gk(row) {
-        for (var i=1; i<arguments.length; i++) {
-          var label = arguments[i];
-          var keys = Object.keys(row);
-          for (var j=0; j<keys.length; j++) {
-            if (norm(keys[j]) === norm(label)) return String(row[keys[j]]||'');
-          }
-        }
-        return '';
-      }
-
-      posts = rows.map(function(row, i) {
-        var nt = gk(row,'noticias','notícias','noticia','notícia','conteudo','texto');
-        var marcaRaw = (gk(row,'marca')||'').trim().toUpperCase().replace(/\s*\+\s*/g,'+');
-        return {
-          id: i,
-          data: normData(gk(row,'data')),
-          cat: normCat(gk(row,'categoria')),
-          titulo: gk(row,'titulo','título','title'),
-          resumo: nt.substring(0,160) + (nt.length>160?'...':''),
-          conteudo: nt.replace(/\n/g,'<br>'),
-          autor: gk(row,'autor','author') || 'Time',
-          pinned: (gk(row,'fixado','pin')||'').toLowerCase().trim()==='sim',
-          marca: marcaRaw,
-          _cor: CORES[i % CORES.length]
-        };
-      }).filter(function(p){ return p.titulo; });
-
-      atualizarNotificacoes();
-      render();
-    } catch(e) {
-      document.getElementById('grid').innerHTML = '<div class="empty">⚠️<p style="margin-top:0.5rem">Erro ao processar dados: ' + e.message + '</p></div>';
-    }
-  };
-
-  script.src = GVZ_URL + '&callback=' + cbName + '&t=' + Date.now();
-  script.onerror = function() {
-    clearTimeout(timer);
-    ic.classList.remove('spin');
-    delete window[cbName];
-    document.getElementById('grid').innerHTML = '<div class="empty">⚠️<p style="margin-top:0.5rem">Erro ao conectar. Verifique se a planilha está publicada na web.</p></div>';
-  };
-  document.head.appendChild(script);
-}
-
-function atualizarNotificacoes() {
-  var lidas = getLidas();
-  var novas = posts.filter(function(p){ return isNovo(p.data) && !lidas.includes(p.id); });
-  var count = novas.length;
-  var nc = document.getElementById('notif-count');
-  var nb = document.getElementById('notif-banner');
-  if (count > 0) {
-    nc.textContent = count;
-    nc.classList.remove('hidden');
-    document.getElementById('notif-texto').textContent = '🔔 ' + count + ' publicaç' + (count>1?'ões novas':' nova') + ' nos últimos 3 dias';
-    nb.style.display = 'block';
-  } else {
-    nc.classList.add('hidden');
-    nb.style.display = 'none';
-  }
-}
-
-function verNovidades() {
-  limpar();
-  var lidas = getLidas();
-  posts.filter(function(p){ return isNovo(p.data) && !lidas.includes(p.id); }).forEach(function(p){ marcarLida(p.id); });
-  document.getElementById('notif-count').classList.add('hidden');
-  document.getElementById('notif-banner').style.display = 'none';
-  render();
-}
-
-function setcat(cat, el) {
-  catAtiva = cat;
-  document.querySelectorAll('.tag').forEach(function(t){ t.classList.remove('active'); });
-  el.classList.add('active');
-  render();
-}
-function setmarca(m, el) {
-  marcaAtiva = m;
-  document.querySelectorAll('.tag-marca').forEach(function(t){ t.classList.remove('active'); });
-  el.classList.add('active');
-  render();
-}
-function limpar() {
-  catAtiva = 'todos'; marcaAtiva = 'todos';
-  document.getElementById('busca').value = '';
-  document.getElementById('data-filtro').value = '';
-  document.querySelectorAll('.tag').forEach(function(t){ t.classList.remove('active'); });
-  document.querySelector('.tag[data-cat="todos"]').classList.add('active');
-  document.querySelectorAll('.tag-marca').forEach(function(t){ t.classList.remove('active'); });
-  document.querySelector('.tag-marca[data-marca="todos"]').classList.add('active');
-  render();
-}
-
-function render() {
-  var grid = document.getElementById('grid');
-  var q = document.getElementById('busca').value.toLowerCase();
-  var dv = document.getElementById('data-filtro').value;
-  var lidas = getLidas();
-
-  var f = posts.filter(function(p) {
-    var mc = catAtiva==='todos' || p.cat===catAtiva;
-    var mm = marcaAtiva==='todos' || p.marca===marcaAtiva;
-    var md = !dv || p.data===dv;
-    var ms = !q || [p.titulo,p.resumo,p.autor,p.conteudo].some(function(t){ return String(t||'').toLowerCase().includes(q); });
-    return mc && mm && md && ms;
-  });
-
-  f.sort(function(a,b){ return (b.pinned?1:0)-(a.pinned?1:0) || (b.data||'').localeCompare(a.data||''); });
-
-  var naoLidas = f.filter(function(p){ return !lidas.includes(p.id) && isNovo(p.data); }).length;
-  document.getElementById('total').textContent = f.length;
-  document.getElementById('nao-lidas-count').textContent = naoLidas > 0 ? (naoLidas + ' não lida' + (naoLidas>1?'s':'')) : '';
-
-  grid.innerHTML = '';
-  if (!f.length) {
-    grid.innerHTML = '<div class="empty">🔍<p style="margin-top:0.5rem">Nenhuma publicação encontrada.</p></div>';
+// Google Visualization API - funciona sem CORS em qualquer dominio
+function rbResponse(resp){
+  var ic=document.getElementById('sync');
+  ic.classList.remove('spin');
+  if(!resp||!resp.table||!resp.table.rows||!resp.table.rows.length){
+    document.getElementById('grid').innerHTML='<div class="empty">📋<p style="margin-top:0.5rem">Planilha sem dados.</p></div>';
     return;
   }
+  var cols=resp.table.cols.map(function(c){return c.label||'';});
+  var rows=resp.table.rows.map(function(row){
+    var obj={};
+    cols.forEach(function(h,j){
+      var cell=row.c[j];
+      obj[h]=(cell&&cell.v!==null&&cell.v!==undefined)?String(cell.v):'';
+    });
+    return obj;
+  });
+  posts=rows.map(function(row,i){
+    var nt=gk(row,'noticias','notícias','noticia','notícia','conteudo','texto');
+    var marca=(gk(row,'marca')||'').trim().toUpperCase().replace(/\s*\+\s*/g,'+');
+    return{id:i,data:normData(gk(row,'data')),cat:normCat(gk(row,'categoria')),titulo:gk(row,'titulo','título','title'),resumo:nt.substring(0,160)+(nt.length>160?'...':''),conteudo:nt.replace(/\n/g,'<br>'),autor:gk(row,'autor','author')||'Time',pinned:norm(gk(row,'fixado','pin'))==='sim',marca:marca,_cor:CORES[i%CORES.length]};
+  }).filter(function(p){return p.titulo;});
+  atualizarNotificacoes();
+  render();
+}
 
-  f.forEach(function(p, i) {
-    var cls = PILLCLS[p.cat] || 'pill-default';
-    var lbl = PILLLBL[p.cat] || '📌 ' + p.cat;
-    var isElogio = p.cat === 'elogios';
-    var isNovoPub = isNovo(p.data) && !lidas.includes(p.id);
-    var marcaPill = '';
-    if (p.marca==='INV') marcaPill = '<span class="pill pill-inv">INV</span>';
-    else if (p.marca==='GLP') marcaPill = '<span class="pill pill-glp">GLP</span>';
-    else if (p.marca==='GLP+INV') marcaPill = '<span class="pill pill-glpinv">GLP+INV</span>';
+function carregar(){
+  var ic=document.getElementById('sync');
+  ic.classList.add('spin');
+  document.getElementById('grid').innerHTML='<div class="empty">⏳<p style="margin-top:0.5rem">Carregando publicações...</p></div>';
+  var old=document.getElementById('gviz-script');
+  if(old)old.parentNode.removeChild(old);
+  var s=document.createElement('script');
+  s.id='gviz-script';
+  s.src='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:json;responseHandler:rbResponse&gid=0&t='+Date.now();
+  s.onerror=function(){
+    ic.classList.remove('spin');
+    document.getElementById('grid').innerHTML='<div class="empty">⚠️<p style="margin-top:0.5rem">Erro ao conectar.</p></div>';
+  };
+  document.head.appendChild(s);
+}
 
-    var div = document.createElement('div');
-    div.className = 'card' + (p.pinned?' pinned':'') + (isElogio?' elogio':'');
-    div.style.animationDelay = Math.min(i*0.05,0.4) + 's';
-    (function(post){ div.onclick = function(){ abrir(post); }; })(p);
-    div.innerHTML = '<div class="card-inner">'
-      + '<div class="card-top"><div class="card-top-left"><span class="pill '+cls+'">'+lbl+'</span>'+marcaPill+(isNovoPub?'<span class="badge-novo">NOVO</span>':'')+'</div>'+(p.pinned&&!isElogio?'<span style="color:var(--accent);font-size:.8rem">📌</span>':'')+'</div>'
-      + '<h3 class="card-title">'+p.titulo+'</h3>'
-      + '<p class="card-excerpt">'+p.resumo+'</p>'
-      + '</div>'
-      + '<div class="card-footer"><div class="meta"><div class="av" style="background:'+p._cor+'">'+ini(p.autor)+'</div><span class="card-author">'+p.autor+'</span></div><span class="card-date">'+fmt(p.data)+'</span></div>';
+function atualizarNotificacoes(){
+  var lidas=getLidas();
+  var n=posts.filter(function(p){return isNovo(p.data)&&lidas.indexOf(p.id)<0;}).length;
+  var nc=document.getElementById('notif-count');
+  var nb=document.getElementById('notif-banner');
+  if(n>0){nc.textContent=n;nc.classList.remove('hidden');document.getElementById('notif-texto').textContent='🔔 '+n+(n>1?' publicações novas':' publicação nova')+' nos últimos 3 dias';nb.style.display='block';}
+  else{nc.classList.add('hidden');nb.style.display='none';}
+}
+function verNovidades(){limpar();var l=getLidas();posts.filter(function(p){return isNovo(p.data)&&l.indexOf(p.id)<0;}).forEach(function(p){marcarLida(p.id);});document.getElementById('notif-count').classList.add('hidden');document.getElementById('notif-banner').style.display='none';render();}
+function setcat(cat,el){catAtiva=cat;document.querySelectorAll('.tag').forEach(function(t){t.classList.remove('active');});el.classList.add('active');render();}
+function setmarca(m,el){marcaAtiva=m;document.querySelectorAll('.tag-marca').forEach(function(t){t.classList.remove('active');});el.classList.add('active');render();}
+function limpar(){catAtiva='todos';marcaAtiva='todos';document.getElementById('busca').value='';document.getElementById('data-filtro').value='';document.querySelectorAll('.tag').forEach(function(t){t.classList.remove('active');});document.querySelector('.tag[data-cat="todos"]').classList.add('active');document.querySelectorAll('.tag-marca').forEach(function(t){t.classList.remove('active');});document.querySelector('.tag-marca[data-marca="todos"]').classList.add('active');render();}
+
+function render(){
+  var grid=document.getElementById('grid');
+  var q=document.getElementById('busca').value.toLowerCase();
+  var dv=document.getElementById('data-filtro').value;
+  var lidas=getLidas();
+  var f=posts.filter(function(p){
+    return(catAtiva==='todos'||p.cat===catAtiva)&&(marcaAtiva==='todos'||p.marca===marcaAtiva)&&(!dv||p.data===dv)&&(!q||[p.titulo,p.resumo,p.autor,p.conteudo].some(function(t){return String(t||'').toLowerCase().indexOf(q)>=0;}));
+  });
+  f.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(b.data||'').localeCompare(a.data||'');});
+  var nl=f.filter(function(p){return lidas.indexOf(p.id)<0&&isNovo(p.data);}).length;
+  document.getElementById('total').textContent=f.length;
+  document.getElementById('nao-lidas-count').textContent=nl>0?(nl+' não lida'+(nl>1?'s':'')):'';
+  grid.innerHTML='';
+  if(!f.length){grid.innerHTML='<div class="empty">🔍<p style="margin-top:0.5rem">Nenhuma publicação encontrada.</p></div>';return;}
+  f.forEach(function(p,i){
+    var cls=PILLCLS[p.cat]||'pill-default';
+    var lbl=PILLLBL[p.cat]||'📌 '+p.cat;
+    var mp='';
+    if(p.marca==='INV')mp='<span class="pill pill-inv">INV</span>';
+    else if(p.marca==='GLP')mp='<span class="pill pill-glp">GLP</span>';
+    else if(p.marca==='GLP+INV')mp='<span class="pill pill-glpinv">GLP+INV</span>';
+    var isNew=isNovo(p.data)&&lidas.indexOf(p.id)<0;
+    var div=document.createElement('div');
+    div.className='card'+(p.pinned?' pinned':'')+(p.cat==='elogios'?' elogio':'');
+    div.style.animationDelay=Math.min(i*0.05,0.4)+'s';
+    (function(post){div.onclick=function(){abrir(post);};})(p);
+    div.innerHTML='<div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill '+cls+'">'+lbl+'</span>'+mp+(isNew?'<span class="badge-novo">NOVO</span>':'')+'</div>'+(p.pinned?'<span style="color:var(--accent);font-size:.8rem">📌</span>':'')+'</div><h3 class="card-title">'+p.titulo+'</h3><p class="card-excerpt">'+p.resumo+'</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:'+p._cor+'">'+ini(p.autor)+'</div><span class="card-author">'+p.autor+'</span></div><span class="card-date">'+fmt(p.data)+'</span></div>';
     grid.appendChild(div);
   });
 }
 
-function abrir(p) {
+function abrir(p){
   marcarLida(p.id);
-  var cls = PILLCLS[p.cat] || 'pill-default';
-  var lbl = PILLLBL[p.cat] || '📌 ' + p.cat;
-  document.getElementById('m-pill').innerHTML = '<span class="pill '+cls+'" style="margin-bottom:0.6rem;display:inline-block">'+lbl+'</span>';
-  document.getElementById('m-titulo').textContent = p.titulo;
-  document.getElementById('m-av').style.background = p._cor;
-  document.getElementById('m-av').textContent = ini(p.autor);
-  document.getElementById('m-autor').textContent = p.autor;
-  document.getElementById('m-data').textContent = fmtFull(p.data);
-  document.getElementById('m-corpo').innerHTML = p.conteudo || '<p>Sem conteúdo.</p>';
+  var cls=PILLCLS[p.cat]||'pill-default';
+  var lbl=PILLLBL[p.cat]||'📌 '+p.cat;
+  document.getElementById('m-pill').innerHTML='<span class="pill '+cls+'" style="margin-bottom:0.6rem;display:inline-block">'+lbl+'</span>';
+  document.getElementById('m-titulo').textContent=p.titulo;
+  document.getElementById('m-av').style.background=p._cor;
+  document.getElementById('m-av').textContent=ini(p.autor);
+  document.getElementById('m-autor').textContent=p.autor;
+  document.getElementById('m-data').textContent=fmtFull(p.data);
+  document.getElementById('m-corpo').innerHTML=p.conteudo||'<p>Sem conteúdo.</p>';
   document.getElementById('overlay').classList.add('open');
-  atualizarNotificacoes();
-  render();
+  atualizarNotificacoes();render();
 }
-function fechar(e) { if(e.target.id==='overlay') fecharDireto(); }
-function fecharDireto() { document.getElementById('overlay').classList.remove('open'); }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') fecharDireto(); });
-
+function fechar(e){if(e.target.id==='overlay')fecharDireto();}
+function fecharDireto(){document.getElementById('overlay').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')fecharDireto();});
 carregar();
 </script>
 
