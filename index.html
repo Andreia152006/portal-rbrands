@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0069)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_12.html -->
+<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_1.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,7 +113,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:3px}
 @media(max-width:600px){.hero,.controls,.divider,.links,.grid{padding-left:1rem;padding-right:1rem}.grid{grid-template-columns:1fr}header{padding:0 1rem}}
 </style>
-<script id="gviz-script" src="./Rbrands · Comunicação D2C_files/json.txt"></script></head>
+<script id="gvs" src="./Rbrands · Comunicação D2C_files/json.txt"></script></head>
 <body>
 <header>
   <div class="logo">
@@ -124,14 +124,14 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
   <div class="header-right">
     <div class="notif-wrap" onclick="verNovidades()">
       <div class="notif-icon">🔔</div>
-      <div class="notif-count hidden" id="notif-count">0</div>
+      <div class="notif-count" id="notif-count">1</div>
     </div>
     <span class="badge">Pós-Venda</span>
   </div>
 </header>
-<div class="notif-banner" id="notif-banner" style="display:none">
+<div class="notif-banner" id="notif-banner" style="display: block;">
   <div class="notif-inner" onclick="verNovidades()">
-    <span id="notif-texto">🔔 Você tem publicações novas!</span>
+    <span id="notif-texto">🔔 1 publicação nova nos últimos 3 dias</span>
     <button class="notif-close" onclick="event.stopPropagation();document.getElementById(&#39;notif-banner&#39;).style.display=&#39;none&#39;">✕</button>
   </div>
 </div>
@@ -154,17 +154,17 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
     <button class="btn-ghost" onclick="limpar()">Limpar</button>
   </div>
   <div class="tags-row">
-    <button class="tag active" data-cat="todos" onclick="setcat(&#39;todos&#39;,this)">🗂️ Todos</button>
+    <button class="tag active" data-cat="todos" onclick="setcat(&#39;todos&#39;,this)">📁 Todos</button>
     <button class="tag" data-cat="orientacoes" onclick="setcat(&#39;orientacoes&#39;,this)">📋 Orientações</button>
     <button class="tag" data-cat="resultados" onclick="setcat(&#39;resultados&#39;,this)">🏆 Resultados</button>
     <button class="tag" data-cat="alinhamentos" onclick="setcat(&#39;alinhamentos&#39;,this)">🤝 Alinhamentos</button>
-    <button class="tag" data-cat="produto" onclick="setcat(&#39;produto&#39;,this)">🛍️ Produto</button>
+    <button class="tag" data-cat="produto" onclick="setcat(&#39;produto&#39;,this)">🛍 Produto</button>
     <button class="tag" data-cat="transportes" onclick="setcat(&#39;transportes&#39;,this)">🚚 Transportes</button>
     <button class="tag" data-cat="campanhas" onclick="setcat(&#39;campanhas&#39;,this)">📣 Campanhas</button>
-    <button class="tag" data-cat="cupons" onclick="setcat(&#39;cupons&#39;,this)">🎟️ Cupons</button>
+    <button class="tag" data-cat="cupons" onclick="setcat(&#39;cupons&#39;,this)">🏿 Cupons</button>
     <button class="tag" data-cat="grupos" onclick="setcat(&#39;grupos&#39;,this)">👥 Grupos Especiais</button>
     <button class="tag" data-cat="dicas" onclick="setcat(&#39;dicas&#39;,this)">💡 Dicas</button>
-    <button class="tag" data-cat="melhorias" onclick="setcat(&#39;melhorias&#39;,this)">⚙️ Melhorias</button>
+    <button class="tag" data-cat="melhorias" onclick="setcat(&#39;melhorias&#39;,this)">⚙ Melhorias</button>
     <button class="tag" data-cat="elogios" onclick="setcat(&#39;elogios&#39;,this)">⭐ Elogios</button>
     <button class="tag" data-cat="nossasagendas" onclick="setcat(&#39;nossasagendas&#39;,this)">📅 Nossas Agendas</button>
     <button class="tag" data-cat="diariobordo" onclick="setcat(&#39;diariobordo&#39;,this)">📓 Diário de Bordo</button>
@@ -178,17 +178,17 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
   </div>
 </div>
 <div class="divider">
-  <p class="count">Exibindo <span id="total">6</span> publicações · <span id="nao-lidas-count" style="color:#c82a2a"></span></p>
+  <p class="count">Exibindo <span id="total">6</span> publicações <span id="nao-lidas-count" style="color:#c82a2a">· 1 não lida</span></p>
   <button class="sync-btn" onclick="carregar()">
     <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class=""><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
     Atualizar
   </button>
 </div>
-<div class="grid" id="grid"><div class="card" style="animation-delay: 0s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-transportes">🚚 Transportes</span></div></div><h3 class="card-title">📦 Reunião 03/03 – J&amp;T Express</h3><p class="card-excerpt">📍 Alteração de Endereço
+<div class="grid" id="grid"><div class="card" style="animation-delay: 0s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📅 Nossas Agendas</span><span class="badge-novo">NOVO</span></div></div><h3 class="card-title">Treinamento Garantia - Troque</h3><p class="card-excerpt">Alinhamentos do funcionamento da garantia dentro Troquecommerce</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c84a7a">A</div><span class="card-author">Andreia</span></div><span class="card-date">11 mar 2026</span></div></div><div class="card elogio" style="animation-delay: 0.05s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-elogios">⭐ Elogios</span></div></div><h3 class="card-title">Elogio Time</h3><p class="card-excerpt">O serviço da Invictus e impecável, da compra ao atendimento tudo muito perfeito só tenho a agradecer...a toda esquipe.</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c87a2a">A</div><span class="card-author">Andreia</span></div><span class="card-date">10 mar 2026</span></div></div><div class="card" style="animation-delay: 0.1s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-melhorias">⚙️ Melhorias</span></div></div><h3 class="card-title">Implantação Garantia - Troquecommerce</h3><p class="card-excerpt">Demos inicio a implantação do processo de Garantia dentro da Ferramenta do Troquecommerce, previsão que na próxima semana já tenhamos o Golive, vamos fazer um t...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date">10 mar 2026</span></div></div><div class="card" style="animation-delay: 0.15s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP- Semana do Consumidor</h3><p class="card-excerpt">Compre e Ganha - De 04 a 20/03 em compras acima de R$ 499 Ganhe copo Cave e acima de R$ 899 garrafa River</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8a5a">A</div><span class="card-author">Andreia</span></div><span class="card-date">9 mar 2026</span></div></div><div class="card" style="animation-delay: 0.2s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP - Programa Afiliados</h3><p class="card-excerpt">Agora a Galapagos terá um programa de afiliados, leia a notícia nesse link: https://galapagos.pilea.app/influencers</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#7a5aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date">9 mar 2026</span></div></div><div class="card" style="animation-delay: 0.25s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-transportes">🚚 Transportes</span></div></div><h3 class="card-title">📦 Reunião 03/03 – J&amp;T Express</h3><p class="card-excerpt">📍 Alteração de Endereço
 Quando e como pode alterar:
 ✅ Sempre será o CEP que direciona a entrega.
 ✅ CEP único: não há problema em alterar o nome da rua.
-⚠️ Alte...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#4669AF">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.05s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP- Semana do Consumidor</h3><p class="card-excerpt">Compre e Ganha - De 04 a 20/03 em compras acima de R$ 499 Ganhe copo Cave e acima de R$ 899 garrafa River</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8a5a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.1s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP - Programa Afiliados</h3><p class="card-excerpt">Agora a Galapagos terá um programa de afiliados, leia a notícia nesse link: https://galapagos.pilea.app/influencers</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#7a5aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card elogio" style="animation-delay: 0.15s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-elogios">⭐ Elogios</span></div></div><h3 class="card-title">Elogio Time</h3><p class="card-excerpt">O serviço da Invictus e impecável, da compra ao atendimento tudo muito perfeito só tenho a agradecer...a toda esquipe.</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c87a2a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.2s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-melhorias">⚙️ Melhorias</span></div></div><h3 class="card-title">Implantação Garantia - Troquecommerce</h3><p class="card-excerpt">Demos inicio a implantação do processo de Garantia dentro da Ferramenta do Troquecommerce, previsão que na próxima semana já tenhamos o Golive, vamos fazer um t...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.25s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📅 Nossas Agendas</span></div></div><h3 class="card-title">Treinamento Garantia - Troque</h3><p class="card-excerpt">Alinhamentos do funcionamento da garantia dentro Troquecommerce</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c84a7a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div></div>
+⚠️ Alte...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#4669AF">A</div><span class="card-author">Andreia</span></div><span class="card-date">3 mar 2026</span></div></div></div>
 <div class="overlay" id="overlay" onclick="fechar(event)">
   <div class="modal">
     <div class="modal-head">
@@ -208,120 +208,108 @@ Quando e como pode alterar:
   </div>
 </div>
 <script>
-var SHEET_ID = '1z5_bN9H0y0mRoIZu2eMiU2O0rpOiOn6uk9qrgA-qq5Q';
+var SID='1z5_bN9H0y0mRoIZu2eMiU2O0rpOiOn6uk9qrgA-qq5Q';
 var MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 var DIAS=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
 var CORES=['#4669AF','#2a8a5a','#7a5aaf','#c87a2a','#2a8aaf','#c84a7a','#e8a020','#c83a2a'];
 var CATS={orientacoes:['orientacoes e procedimentos','orientações e procedimentos','orientacao','orientações','orientacoes','procedimentos'],resultados:['nossos resultados','resultados','resultado'],alinhamentos:['alinhamentos','alinhamento'],produto:['produto','produtos'],transportes:['transportes','transporte','entrega','entregas','frete'],campanhas:['campanhas','campanha'],cupons:['cupons','cupom'],grupos:['grupos especiais','grupo especial','grupos','grupo'],dicas:['dica de atendimentos','dicas de atendimento','dicas','dica'],melhorias:['melhorias','melhoria','melhirias','melhiria'],elogios:['elogios','elogio'],nossasagendas:['nossas agendas','nossa agenda'],diariobordo:['diario de bordo','diário de bordo','diario bordo']};
 var PILLCLS={orientacoes:'pill-default',resultados:'pill-resultados',alinhamentos:'pill-alinhamentos',produto:'pill-produto',transportes:'pill-transportes',campanhas:'pill-campanhas',cupons:'pill-cupons',grupos:'pill-grupos',dicas:'pill-dicas',melhorias:'pill-melhorias',elogios:'pill-elogios',nossasagendas:'pill-default',diariobordo:'pill-diariobordo',outros:'pill-default'};
 var PILLLBL={orientacoes:'📋 Orientações',resultados:'🏆 Resultados',alinhamentos:'🤝 Alinhamentos',produto:'🛍️ Produto',transportes:'🚚 Transportes',campanhas:'📣 Campanhas',cupons:'🎟️ Cupons',grupos:'👥 Grupos',dicas:'💡 Dicas',melhorias:'⚙️ Melhorias',elogios:'⭐ Elogios',nossasagendas:'📅 Nossas Agendas',diariobordo:'📓 Diário de Bordo',outros:'📌 Outros'};
-
 function norm(s){return(s||'').toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
-function normCat(raw){var v=norm(raw);var ks=Object.keys(CATS);for(var i=0;i<ks.length;i++){var arr=CATS[ks[i]];for(var j=0;j<arr.length;j++){if(norm(arr[j])===v)return ks[i];}}return'outros';}
-function normData(val){if(!val)return'';var s=String(val).trim();if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;var m=s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})$/);if(m){var y=m[3].length===2?'20'+m[3]:m[3];return y+'-'+('0'+m[2]).slice(-2)+'-'+('0'+m[1]).slice(-2);}try{var d=new Date(val);if(!isNaN(d))return d.toISOString().split('T')[0];}catch(e){}return'';}
-function fmt(d){if(!d)return'';var p=d.split('-');var ms=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];return parseInt(p[2])+' '+ms[parseInt(p[1])-1]+' '+p[0];}
+function normCat(r){var v=norm(r),ks=Object.keys(CATS);for(var i=0;i<ks.length;i++){var a=CATS[ks[i]];for(var j=0;j<a.length;j++){if(norm(a[j])===v)return ks[i];}}return'outros';}
+function isoDate(v){
+  if(!v)return'';
+  if(v instanceof Date){return v.getFullYear()+'-'+('0'+(v.getMonth()+1)).slice(-2)+'-'+('0'+v.getDate()).slice(-2);}
+  var s=String(v).trim();
+  if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;
+  // GViz retorna "Date(2026,2,3)" onde mes eh 0-indexed
+  var gv=s.match(/Date\((\d+),(\d+),(\d+)\)/);
+  if(gv){return gv[1]+'-'+('0'+(parseInt(gv[2])+1)).slice(-2)+'-'+('0'+gv[3]).slice(-2);}
+  var m=s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})$/);
+  if(m){var y=m[3].length===2?'20'+m[3]:m[3];return y+'-'+('0'+m[2]).slice(-2)+'-'+('0'+m[1]).slice(-2);}
+  try{var d=new Date(v);if(!isNaN(d))return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}catch(e){}
+  return'';
+}
+function fmt(d){if(!d)return'';var p=d.split('-'),ms=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];return parseInt(p[2])+' '+ms[parseInt(p[1])-1]+' '+p[0];}
 function fmtFull(d){if(!d)return'';var p=d.split('-');return parseInt(p[2])+' de '+MESES[parseInt(p[1])-1]+' de '+p[0];}
 function ini(s){return((s||'').split(' ').map(function(w){return w[0]||'';}).join('').substring(0,2).toUpperCase());}
-function gk(row){for(var i=1;i<arguments.length;i++){var lbl=arguments[i];var ks=Object.keys(row);for(var j=0;j<ks.length;j++){if(norm(ks[j])===norm(lbl))return String(row[ks[j]]||'');}}return'';}
-
-var hoje=new Date();
-document.getElementById('hoje').textContent=DIAS[hoje.getDay()]+', '+hoje.getDate()+' de '+MESES[hoje.getMonth()]+' de '+hoje.getFullYear();
+function gk(row){for(var i=1;i<arguments.length;i++){var l=arguments[i],ks=Object.keys(row);for(var j=0;j<ks.length;j++){if(norm(ks[j])===norm(l))return String(row[ks[j]]||'');}}return'';}
+var h=new Date();
+document.getElementById('hoje').textContent=DIAS[h.getDay()]+', '+h.getDate()+' de '+MESES[h.getMonth()]+' de '+h.getFullYear();
 function getLidas(){try{return JSON.parse(localStorage.getItem('lidas')||'[]');}catch(e){return[];}}
 function marcarLida(id){var l=getLidas();if(l.indexOf(id)<0){l.push(id);localStorage.setItem('lidas',JSON.stringify(l));}}
-function isNovo(d){if(!d)return false;return(new Date()-new Date(d))/864e5<=3;}
+function isNovo(d){return d&&(new Date()-new Date(d))/864e5<=3;}
+var posts=[],catA='todos',marcaA='todos';
 
-var posts=[],catAtiva='todos',marcaAtiva='todos';
-
-// Google Visualization API - funciona sem CORS em qualquer dominio
 function rbResponse(resp){
-  var ic=document.getElementById('sync');
-  ic.classList.remove('spin');
-  if(!resp||!resp.table||!resp.table.rows||!resp.table.rows.length){
-    document.getElementById('grid').innerHTML='<div class="empty">📋<p style="margin-top:0.5rem">Planilha sem dados.</p></div>';
-    return;
-  }
-  var cols=resp.table.cols.map(function(c){return c.label||'';});
-  var rows=resp.table.rows.map(function(row){
+  document.getElementById('sync').classList.remove('spin');
+  if(!resp||!resp.table){document.getElementById('grid').innerHTML='<div class="empty"><p>Sem dados.</p></div>';return;}
+  var t=resp.table,cols=t.cols.map(function(c){return c.label||'';});
+  var rows=t.rows.map(function(row){
     var obj={};
     cols.forEach(function(h,j){
       var cell=row.c[j];
-      obj[h]=(cell&&cell.v!==null&&cell.v!==undefined)?String(cell.v):'';
+      if(!cell||cell.v===null||cell.v===undefined){obj[h]='';return;}
+      // Para datas: usar o campo 'f' (formatado) ou parsear 'v'
+      if(cell.v instanceof Date){obj[h]=isoDate(cell.v);}
+      else if(cell.f&&typeof cell.f==='string'&&cell.f.match(/\d{2}\/\d{2}\/\d{4}/)){obj[h]=isoDate(cell.f);}
+      else{obj[h]=String(cell.v);}
     });
     return obj;
   });
   posts=rows.map(function(row,i){
     var nt=gk(row,'noticias','notícias','noticia','notícia','conteudo','texto');
     var marca=(gk(row,'marca')||'').trim().toUpperCase().replace(/\s*\+\s*/g,'+');
-    return{id:i,data:normData(gk(row,'data')),cat:normCat(gk(row,'categoria')),titulo:gk(row,'titulo','título','title'),resumo:nt.substring(0,160)+(nt.length>160?'...':''),conteudo:nt.replace(/\n/g,'<br>'),autor:gk(row,'autor','author')||'Time',pinned:norm(gk(row,'fixado','pin'))==='sim',marca:marca,_cor:CORES[i%CORES.length]};
+    var data=isoDate(gk(row,'data'));
+    return{id:i,data:data,cat:normCat(gk(row,'categoria')),titulo:gk(row,'titulo','título','title'),resumo:nt.substring(0,160)+(nt.length>160?'...':''),conteudo:nt.replace(/\n/g,'<br>'),autor:gk(row,'autor','author')||'Time',pinned:norm(gk(row,'fixado','pin'))==='sim',marca:marca,_cor:CORES[i%CORES.length]};
   }).filter(function(p){return p.titulo;});
-  atualizarNotificacoes();
-  render();
+  atualizarNotifs();render();
 }
 
 function carregar(){
-  var ic=document.getElementById('sync');
-  ic.classList.add('spin');
-  document.getElementById('grid').innerHTML='<div class="empty">⏳<p style="margin-top:0.5rem">Carregando publicações...</p></div>';
-  var old=document.getElementById('gviz-script');
-  if(old)old.parentNode.removeChild(old);
-  var s=document.createElement('script');
-  s.id='gviz-script';
-  s.src='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:json;responseHandler:rbResponse&gid=0&t='+Date.now();
-  s.onerror=function(){
-    ic.classList.remove('spin');
-    document.getElementById('grid').innerHTML='<div class="empty">⚠️<p style="margin-top:0.5rem">Erro ao conectar.</p></div>';
-  };
+  document.getElementById('sync').classList.add('spin');
+  document.getElementById('grid').innerHTML='<div class="empty"><p>&#9203; Carregando publicações...</p></div>';
+  var old=document.getElementById('gvs');if(old)old.remove();
+  var s=document.createElement('script');s.id='gvs';
+  s.src='https://docs.google.com/spreadsheets/d/'+SID+'/gviz/tq?tqx=out:json;responseHandler:rbResponse&gid=0&t='+Date.now();
+  s.onerror=function(){document.getElementById('sync').classList.remove('spin');document.getElementById('grid').innerHTML='<div class="empty"><p>Erro ao conectar.</p></div>';};
   document.head.appendChild(s);
 }
 
-function atualizarNotificacoes(){
-  var lidas=getLidas();
-  var n=posts.filter(function(p){return isNovo(p.data)&&lidas.indexOf(p.id)<0;}).length;
-  var nc=document.getElementById('notif-count');
-  var nb=document.getElementById('notif-banner');
+function atualizarNotifs(){
+  var l=getLidas(),n=posts.filter(function(p){return isNovo(p.data)&&l.indexOf(p.id)<0;}).length;
+  var nc=document.getElementById('notif-count'),nb=document.getElementById('notif-banner');
   if(n>0){nc.textContent=n;nc.classList.remove('hidden');document.getElementById('notif-texto').textContent='🔔 '+n+(n>1?' publicações novas':' publicação nova')+' nos últimos 3 dias';nb.style.display='block';}
   else{nc.classList.add('hidden');nb.style.display='none';}
 }
 function verNovidades(){limpar();var l=getLidas();posts.filter(function(p){return isNovo(p.data)&&l.indexOf(p.id)<0;}).forEach(function(p){marcarLida(p.id);});document.getElementById('notif-count').classList.add('hidden');document.getElementById('notif-banner').style.display='none';render();}
-function setcat(cat,el){catAtiva=cat;document.querySelectorAll('.tag').forEach(function(t){t.classList.remove('active');});el.classList.add('active');render();}
-function setmarca(m,el){marcaAtiva=m;document.querySelectorAll('.tag-marca').forEach(function(t){t.classList.remove('active');});el.classList.add('active');render();}
-function limpar(){catAtiva='todos';marcaAtiva='todos';document.getElementById('busca').value='';document.getElementById('data-filtro').value='';document.querySelectorAll('.tag').forEach(function(t){t.classList.remove('active');});document.querySelector('.tag[data-cat="todos"]').classList.add('active');document.querySelectorAll('.tag-marca').forEach(function(t){t.classList.remove('active');});document.querySelector('.tag-marca[data-marca="todos"]').classList.add('active');render();}
-
+function setcat(c,el){catA=c;document.querySelectorAll('.tag').forEach(function(t){t.classList.remove('active');});el.classList.add('active');render();}
+function setmarca(m,el){marcaA=m;document.querySelectorAll('.tag-marca').forEach(function(t){t.classList.remove('active');});el.classList.add('active');render();}
+function limpar(){catA='todos';marcaA='todos';document.getElementById('busca').value='';document.getElementById('data-filtro').value='';document.querySelectorAll('.tag').forEach(function(t){t.classList.remove('active');});document.querySelector('.tag[data-cat="todos"]').classList.add('active');document.querySelectorAll('.tag-marca').forEach(function(t){t.classList.remove('active');});document.querySelector('.tag-marca[data-marca="todos"]').classList.add('active');render();}
 function render(){
-  var grid=document.getElementById('grid');
-  var q=document.getElementById('busca').value.toLowerCase();
-  var dv=document.getElementById('data-filtro').value;
-  var lidas=getLidas();
-  var f=posts.filter(function(p){
-    return(catAtiva==='todos'||p.cat===catAtiva)&&(marcaAtiva==='todos'||p.marca===marcaAtiva)&&(!dv||p.data===dv)&&(!q||[p.titulo,p.resumo,p.autor,p.conteudo].some(function(t){return String(t||'').toLowerCase().indexOf(q)>=0;}));
-  });
+  var g=document.getElementById('grid'),q=document.getElementById('busca').value.toLowerCase(),dv=document.getElementById('data-filtro').value,l=getLidas();
+  var f=posts.filter(function(p){return(catA==='todos'||p.cat===catA)&&(marcaA==='todos'||p.marca===marcaA)&&(!dv||p.data===dv)&&(!q||[p.titulo,p.resumo,p.autor,p.conteudo].some(function(t){return(t||'').toLowerCase().indexOf(q)>=0;}));});
   f.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(b.data||'').localeCompare(a.data||'');});
-  var nl=f.filter(function(p){return lidas.indexOf(p.id)<0&&isNovo(p.data);}).length;
+  var nl=f.filter(function(p){return l.indexOf(p.id)<0&&isNovo(p.data);}).length;
   document.getElementById('total').textContent=f.length;
-  document.getElementById('nao-lidas-count').textContent=nl>0?(nl+' não lida'+(nl>1?'s':'')):'';
-  grid.innerHTML='';
-  if(!f.length){grid.innerHTML='<div class="empty">🔍<p style="margin-top:0.5rem">Nenhuma publicação encontrada.</p></div>';return;}
+  document.getElementById('nao-lidas-count').textContent=nl>0?('· '+nl+' não lida'+(nl>1?'s':'')):'';
+  g.innerHTML='';
+  if(!f.length){g.innerHTML='<div class="empty"><p>Nenhuma publicação encontrada.</p></div>';return;}
   f.forEach(function(p,i){
-    var cls=PILLCLS[p.cat]||'pill-default';
-    var lbl=PILLLBL[p.cat]||'📌 '+p.cat;
-    var mp='';
-    if(p.marca==='INV')mp='<span class="pill pill-inv">INV</span>';
-    else if(p.marca==='GLP')mp='<span class="pill pill-glp">GLP</span>';
-    else if(p.marca==='GLP+INV')mp='<span class="pill pill-glpinv">GLP+INV</span>';
-    var isNew=isNovo(p.data)&&lidas.indexOf(p.id)<0;
+    var cls=PILLCLS[p.cat]||'pill-default',lbl=PILLLBL[p.cat]||p.cat;
+    var mp=p.marca==='INV'?'<span class="pill pill-inv">INV</span>':p.marca==='GLP'?'<span class="pill pill-glp">GLP</span>':p.marca==='GLP+INV'?'<span class="pill pill-glpinv">GLP+INV</span>':'';
+    var isNew=isNovo(p.data)&&l.indexOf(p.id)<0;
     var div=document.createElement('div');
     div.className='card'+(p.pinned?' pinned':'')+(p.cat==='elogios'?' elogio':'');
     div.style.animationDelay=Math.min(i*0.05,0.4)+'s';
     (function(post){div.onclick=function(){abrir(post);};})(p);
     div.innerHTML='<div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill '+cls+'">'+lbl+'</span>'+mp+(isNew?'<span class="badge-novo">NOVO</span>':'')+'</div>'+(p.pinned?'<span style="color:var(--accent);font-size:.8rem">📌</span>':'')+'</div><h3 class="card-title">'+p.titulo+'</h3><p class="card-excerpt">'+p.resumo+'</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:'+p._cor+'">'+ini(p.autor)+'</div><span class="card-author">'+p.autor+'</span></div><span class="card-date">'+fmt(p.data)+'</span></div>';
-    grid.appendChild(div);
+    g.appendChild(div);
   });
 }
-
 function abrir(p){
   marcarLida(p.id);
-  var cls=PILLCLS[p.cat]||'pill-default';
-  var lbl=PILLLBL[p.cat]||'📌 '+p.cat;
+  var cls=PILLCLS[p.cat]||'pill-default',lbl=PILLLBL[p.cat]||p.cat;
   document.getElementById('m-pill').innerHTML='<span class="pill '+cls+'" style="margin-bottom:0.6rem;display:inline-block">'+lbl+'</span>';
   document.getElementById('m-titulo').textContent=p.titulo;
   document.getElementById('m-av').style.background=p._cor;
@@ -330,13 +318,12 @@ function abrir(p){
   document.getElementById('m-data').textContent=fmtFull(p.data);
   document.getElementById('m-corpo').innerHTML=p.conteudo||'<p>Sem conteúdo.</p>';
   document.getElementById('overlay').classList.add('open');
-  atualizarNotificacoes();render();
+  atualizarNotifs();render();
 }
 function fechar(e){if(e.target.id==='overlay')fecharDireto();}
 function fecharDireto(){document.getElementById('overlay').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')fecharDireto();});
 carregar();
 </script>
-
 
 </body></html>
