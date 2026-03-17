@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_2.html -->
+<!-- saved from url=(0068)file:///C:/Users/andreia.machado/Downloads/portal-comunicacao_6.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,6 +67,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
 .card.pinned::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light))}
 .card.elogio{border-color:rgba(232,160,32,0.4);background:linear-gradient(135deg,#fffdf5,#fff8e8)}
 .card.elogio::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#e8a020,#f5c842)}
+.card-img{width:100%;height:140px;object-fit:cover;display:block}
 .card-inner{padding:1rem 1.1rem 0.9rem}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.6rem}
 .card-top-left{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap}
@@ -124,21 +125,21 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
   <div class="header-right">
     <div class="notif-wrap" onclick="verNovidades()">
       <div class="notif-icon">🔔</div>
-      <div class="notif-count" id="notif-count">1</div>
+      <div class="notif-count hidden" id="notif-count">0</div>
     </div>
     <span class="badge">Pós-Venda</span>
   </div>
 </header>
-<div class="notif-banner" id="notif-banner" style="display: block;">
+<div class="notif-banner" id="notif-banner" style="display:none">
   <div class="notif-inner" onclick="verNovidades()">
-    <span id="notif-texto">🔔 1 publicação nova nos últimos 3 dias</span>
+    <span id="notif-texto">Você tem publicações novas!</span>
     <button class="notif-close" onclick="event.stopPropagation();document.getElementById(&#39;notif-banner&#39;).style.display=&#39;none&#39;">✕</button>
   </div>
 </div>
 <div class="hero">
   <p class="hero-label">✦ Pós-Venda · Invictus &amp; Galápagos</p>
   <h1>Tudo num só lugar.<br><em>Comunicação simplificada.</em></h1>
-  <p class="hero-date" id="hoje">Quinta-feira, 12 de Março de 2026</p>
+  <p class="hero-date" id="hoje">Terça-feira, 17 de Março de 2026</p>
 </div>
 <div class="links">
   <a class="link-btn" href="https://www.invictus.com.br/" target="_blank">🌐 Site Invictus</a>
@@ -178,17 +179,24 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backd
   </div>
 </div>
 <div class="divider">
-  <p class="count">Exibindo <span id="total">6</span> publicações <span id="nao-lidas-count" style="color:#c82a2a">· 1 não lida</span></p>
+  <p class="count">Exibindo <span id="total">10</span> publicações <span id="nao-lidas-count" style="color:#c82a2a"></span></p>
   <button class="sync-btn" onclick="carregar()">
     <svg id="sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class=""><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
     Atualizar
   </button>
 </div>
-<div class="grid" id="grid"><div class="card" style="animation-delay: 0s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📅 Nossas Agendas</span><span class="pill pill-glpinv">GLP+INV</span><span class="badge-novo">NOVO</span></div></div><h3 class="card-title">Treinamento Garantia - Troque</h3><p class="card-excerpt">Alinhamentos do funcionamento da garantia dentro Troquecommerce</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c84a7a">A</div><span class="card-author">Andreia</span></div><span class="card-date">11 mar 2026</span></div></div><div class="card elogio" style="animation-delay: 0.05s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-elogios">⭐ Elogios</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">Elogio Time</h3><p class="card-excerpt">O serviço da Invictus e impecável, da compra ao atendimento tudo muito perfeito só tenho a agradecer...a toda esquipe.</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c87a2a">A</div><span class="card-author">Andreia</span></div><span class="card-date">10 mar 2026</span></div></div><div class="card" style="animation-delay: 0.1s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-melhorias">⚙️ Melhorias</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">Implantação Garantia - Troquecommerce</h3><p class="card-excerpt">Demos inicio a implantação do processo de Garantia dentro da Ferramenta do Troquecommerce, previsão que na próxima semana já tenhamos o Golive, vamos fazer um t...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date">10 mar 2026</span></div></div><div class="card" style="animation-delay: 0.15s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP- Semana do Consumidor</h3><p class="card-excerpt">Compre e Ganha - De 04 a 20/03 em compras acima de R$ 499 Ganhe copo Cave e acima de R$ 899 garrafa River</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8a5a">A</div><span class="card-author">Andreia</span></div><span class="card-date">9 mar 2026</span></div></div><div class="card" style="animation-delay: 0.2s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">GLP - Programa Afiliados</h3><p class="card-excerpt">Agora a Galapagos terá um programa de afiliados, leia a notícia nesse link: https://galapagos.pilea.app/influencers</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#7a5aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date">9 mar 2026</span></div></div><div class="card" style="animation-delay: 0.25s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-transportes">🚚 Transportes</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">📦 Reunião 03/03 – J&amp;T Express</h3><p class="card-excerpt">📍 Alteração de Endereço
+<div class="grid" id="grid"><div class="card" style="animation-delay: 0s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📋 Orientações</span><span class="pill pill-inv">INV</span></div></div><h3 class="card-title">Teste 1</h3><p class="card-excerpt">Teste planilha</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#4669AF">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.05s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-transportes">🚚 Transportes</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">📦 ALINHAMENTO – SAC &gt; J&amp;T </h3><p class="card-excerpt">Segue pontos levantados e processos alinhados entre SAC &gt; J&amp;T 
+
+📍 Alteração de Endereço
 Quando e como pode alterar:
-✅ Sempre será o CEP que direciona a entrega.
-✅ CEP único: não há problema em alterar o nome da rua.
-⚠️ Alte...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#4669AF">A</div><span class="card-author">Andreia</span></div><span class="card-date">3 mar 2026</span></div></div></div>
+✅ Sempre será o CEP que direciona a entrega...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8a5a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.1s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">SEMANA DO CONSUMIDOR GALAPAGOS</h3><p class="card-excerpt">🎉✨ Compre e Ganha - 
+
+De 04 a 20/03 em compras acima de R$ 499 Ganhe copo Cave e acima de R$ 899 garrafa River</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#7a5aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.15s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">PROGRAMA DE AFILIADOS GALAPAGOS</h3><p class="card-excerpt">Agora a Galapagos terá um programa de afiliados, leia a notícia nesse link: https://galapagos.pilea.app/influencers</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c87a2a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card elogio" style="animation-delay: 0.2s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-elogios">⭐ Elogios</span><span class="pill pill-inv">INV</span></div></div><h3 class="card-title">🌟ELOGIO TIME 🌟</h3><p class="card-excerpt">O serviço da Invictus e impecável, da compra ao atendimento tudo muito perfeito só tenho a agradecer...a toda esquipe.</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8aaf">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.25s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-melhorias">⚙️ Melhorias</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">GARANTIA &gt; TROQUECOMMERCE</h3><p class="card-excerpt">Demos inicio a implantação do processo de Garantia dentro da Ferramenta do Troquecommerce, previsão que na próxima semana já tenhamos o Golive, vamos fazer um t...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c84a7a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.3s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📅 Nossas Agendas</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">TREINAMENTO GARANTIA &gt; TROQUECOMMERCE</h3><p class="card-excerpt">Treinamento do novo painel do Troque para tratativas de processos de garantia. Durante a agenda, revisamos as funcionalidades, tipificações e reforçamos que o p...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#e8a020">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.35s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-inv">INV</span></div></div><h3 class="card-title">SEMANA DO CONSUMIDOR INVICTUS</h3><p class="card-excerpt">A ação é válida às 08:00 do 11/03/2026 até às 23h59 do dia 16/03/2026, ou enquanto durarem os estoques dos brindes promocionais. Durante o período da promoção S...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#c83a2a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.4s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-campanhas">📣 Campanhas</span><span class="pill pill-glp">GLP</span></div></div><h3 class="card-title">🛒 🎯 SEMANA GLP COMERCIAL</h3><p class="card-excerpt">Para essa semana temos previsto para a Galapagos: 
+Gaivota 20% = finaliza hoje
+Semana do Consumnidor - prevista até dia 20, podendo encerramento ser antecipado
+...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#4669AF">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div><div class="card" style="animation-delay: 0.4s;"><div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill pill-default">📅 Nossas Agendas</span><span class="pill pill-glpinv">GLP+INV</span></div></div><h3 class="card-title">📉 🎯 FECHAMENTO FEVEREIRO</h3><p class="card-excerpt">Resumo dos resultados de Fev.26 
+SAC | Canais e Volumetria de Atendimento — Fevereiro 2026
+O volume total de atendimentos em fevereiro foi de 3.475 acionamentos...</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:#2a8a5a">A</div><span class="card-author">Andreia</span></div><span class="card-date"></span></div></div></div>
 <div class="overlay" id="overlay" onclick="fechar(event)">
   <div class="modal">
     <div class="modal-head">
@@ -262,7 +270,7 @@ function rbResponse(resp){
     var marcaRaw=(gk(row,'marca')||'').trim().toUpperCase().replace(/\s*\+\s*/g,'+');
     var marca=marcaRaw==='INV+GLP'||marcaRaw==='GLP+INV'?'GLP+INV':marcaRaw;
     var data=isoDate(gk(row,'data'));
-    return{id:i,data:data,cat:normCat(gk(row,'categoria')),titulo:gk(row,'titulo','título','title'),resumo:nt.substring(0,160)+(nt.length>160?'...':''),conteudo:nt.replace(/\n/g,'<br>'),autor:gk(row,'autor','author')||'Time',pinned:norm(gk(row,'fixado','pin'))==='sim',marca:marca,_cor:CORES[i%CORES.length]};
+    return{id:i,data:data,cat:normCat(gk(row,'categoria')),titulo:gk(row,'titulo','título','title'),resumo:nt.substring(0,160)+(nt.length>160?'...':''),conteudo:nt.replace(/\n/g,'<br>'),autor:gk(row,'autor','author')||'Time',pinned:norm(gk(row,'fixado','pin'))==='sim',marca:marca,imagem:gk(row,'imagem','image','img'),_cor:CORES[i%CORES.length]};
   }).filter(function(p){return p.titulo;});
   atualizarNotifs();render();
 }
@@ -272,7 +280,7 @@ function carregar(){
   document.getElementById('grid').innerHTML='<div class="empty"><p>&#9203; Carregando publicações...</p></div>';
   var old=document.getElementById('gvs');if(old)old.remove();
   var s=document.createElement('script');s.id='gvs';
-  s.src='https://docs.google.com/spreadsheets/d/'+SID+'/gviz/tq?tqx=out:json;responseHandler:rbResponse&gid=0&t='+Date.now();
+  s.src='https://docs.google.com/spreadsheets/d/'+SID+'/gviz/tq?tqx=out:json;responseHandler:rbResponse&gid=1600078174&t='+Date.now();
   s.onerror=function(){document.getElementById('sync').classList.remove('spin');document.getElementById('grid').innerHTML='<div class="empty"><p>Erro ao conectar.</p></div>';};
   document.head.appendChild(s);
 }
@@ -304,7 +312,7 @@ function render(){
     div.className='card'+(p.pinned?' pinned':'')+(p.cat==='elogios'?' elogio':'');
     div.style.animationDelay=Math.min(i*0.05,0.4)+'s';
     (function(post){div.onclick=function(){abrir(post);};})(p);
-    div.innerHTML='<div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill '+cls+'">'+lbl+'</span>'+mp+(isNew?'<span class="badge-novo">NOVO</span>':'')+'</div>'+(p.pinned?'<span style="color:var(--accent);font-size:.8rem">📌</span>':'')+'</div><h3 class="card-title">'+p.titulo+'</h3><p class="card-excerpt">'+p.resumo+'</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:'+p._cor+'">'+ini(p.autor)+'</div><span class="card-author">'+p.autor+'</span></div><span class="card-date">'+fmt(p.data)+'</span></div>';
+    div.innerHTML=(p.imagem?'<img class="card-img" src="'+p.imagem+'" alt="" onerror="this.style.display=\'none\'">':'')+'<div class="card-inner"><div class="card-top"><div class="card-top-left"><span class="pill '+cls+'">'+lbl+'</span>'+mp+(isNew?'<span class="badge-novo">NOVO</span>':'')+'</div>'+(p.pinned?'<span style="color:var(--accent);font-size:.8rem">📌</span>':'')+'</div><h3 class="card-title">'+p.titulo+'</h3><p class="card-excerpt">'+p.resumo+'</p></div><div class="card-footer"><div class="meta"><div class="av" style="background:'+p._cor+'">'+ini(p.autor)+'</div><span class="card-author">'+p.autor+'</span></div><span class="card-date">'+fmt(p.data)+'</span></div>';
     g.appendChild(div);
   });
 }
@@ -317,7 +325,7 @@ function abrir(p){
   document.getElementById('m-av').textContent=ini(p.autor);
   document.getElementById('m-autor').textContent=p.autor;
   document.getElementById('m-data').textContent=fmtFull(p.data);
-  document.getElementById('m-corpo').innerHTML=p.conteudo||'<p>Sem conteúdo.</p>';
+  document.getElementById('m-corpo').innerHTML=(p.imagem?'<img src="'+p.imagem+'" style="width:100%;border-radius:8px;margin-bottom:1rem" onerror="this.style.display=none">':'')+(p.conteudo||'<p>Sem conteúdo.</p>');
   document.getElementById('overlay').classList.add('open');
   atualizarNotifs();render();
 }
@@ -325,6 +333,16 @@ function fechar(e){if(e.target.id==='overlay')fecharDireto();}
 function fecharDireto(){document.getElementById('overlay').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')fecharDireto();});
 carregar();
+
+// Auto-refresh a cada 5 minutos
+setInterval(function(){
+  var ic=document.getElementById('sync');
+  ic.classList.add('spin');
+  var old=document.getElementById('gvs');if(old)old.remove();
+  var s=document.createElement('script');s.id='gvs';
+  s.src='https://docs.google.com/spreadsheets/d/'+SID+'/gviz/tq?tqx=out:json;responseHandler:rbResponse&gid=1600078174&t='+Date.now();
+  document.head.appendChild(s);
+}, 5 * 60 * 1000);
 </script>
 
 </body></html>
